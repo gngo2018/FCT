@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CharacterThrowDown.WebMVC.Models;
+using CharacterThrowDown.Data;
 
 namespace CharacterThrowDown.WebMVC.Controllers
 {

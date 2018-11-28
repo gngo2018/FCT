@@ -201,7 +201,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -281,6 +280,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CharacterThrowdown.Data\CharacterThrowdown.Data.csproj">
+      <Project>{40776303-8eb6-4493-9a73-04876ea5f9c3}</Project>
+      <Name>CharacterThrowdown.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CharacterThrowdown.Models\CharacterThrowdown.Models.csproj">
+      <Project>{856a30b7-8ce7-4f98-80f0-d61897137f61}</Project>
+      <Name>CharacterThrowdown.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CharacterThrowdown.Services\CharacterThrowdown.Services.csproj">
+      <Project>{a0ab71ac-c707-40fa-a6a5-b7e1714ff8f2}</Project>
+      <Name>CharacterThrowdown.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
