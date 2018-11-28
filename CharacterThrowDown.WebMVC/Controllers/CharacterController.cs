@@ -34,19 +34,36 @@ namespace CharacterThrowDown.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CharacterCreate model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+            
+            var service = CreateCharacterService();
+
+            if (service.CreateCharacter(model))
             {
-                return View(model);
-            }
+                TempData["SaveResult"] = "Your character is ready for battle!";
+                return RedirectToAction("Index");
+            };
 
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CharacterService(userId);
+            ModelState.AddModelError("", "Character was unable to be created, please try again");
 
-            service.CreateCharacter(model);
-
-            return RedirectToAction("Index");
+            return View(model);
         }
 
+        //GET: Character Details
+        public ActionResult Details(int id)
+        {
+            var svc = CreateCharacterService();
+            var model = svc.GetCharacterById(id);
+
+            return View(model);
+        }
+
+        private CharacterService CreateCharacterService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CharacterService(userId);
+            return service;
+        }
 
     }
 }

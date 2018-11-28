@@ -56,5 +56,25 @@ namespace CharacterThrowdown.Services
                 return query.ToArray();
             }
         }
+
+        public CharacterDetail GetCharacterById(int characterId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Characters
+                        .Single(e => e.CharacterId == characterId && e.OwnerId == _userId);
+                return
+                    new CharacterDetail
+                    {
+                        CharacterId = entity.CharacterId,
+                        CharacterName = entity.CharacterName,
+                        CharacterUniverse = entity.CharacterUniverse,
+                        CharacterAbillity = entity.CharacterAbillity
+                    };
+
+            }
+        }
     }
 }
