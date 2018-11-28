@@ -58,6 +58,48 @@ namespace CharacterThrowDown.WebMVC.Controllers
             return View(model);
         }
 
+        //GET: Character Edit
+        public ActionResult Edit(int id)
+        {
+            var service = CreateCharacterService();
+            var detail = service.GetCharacterById(id);
+            var model =
+                new CharacterEdit
+                {
+                    CharacterId = detail.CharacterId,
+                    CharacterName = detail.CharacterName,
+                    CharacterUniverse = detail.CharacterUniverse,
+                    CharacterAbillity = detail.CharacterAbillity
+                };
+
+            return View(model);
+        }
+
+        //POST: Character Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CharacterEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.CharacterId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateCharacterService();
+
+            if (service.UpdateNote(model))
+            {
+                TempData["SaveResult"] = "Your Character was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your Character could not be updated");
+            return View();
+        }
+
         private CharacterService CreateCharacterService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

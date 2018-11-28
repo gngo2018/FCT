@@ -76,5 +76,22 @@ namespace CharacterThrowdown.Services
 
             }
         }
+
+        public bool UpdateNote(CharacterEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Characters
+                        .Single(e => e.CharacterId == model.CharacterId && e.OwnerId == _userId);
+
+                entity.CharacterName = model.CharacterName;
+                entity.CharacterUniverse = model.CharacterUniverse;
+                entity.CharacterAbillity = model.CharacterAbillity;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
