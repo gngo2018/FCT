@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CharacterThrowdown.Data\CharacterThrowdown.Data.csproj">
+      <Project>{40776303-8eb6-4493-9a73-04876ea5f9c3}</Project>
+      <Name>CharacterThrowdown.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CharacterThrowdown.Models\CharacterThrowdown.Models.csproj">
+      <Project>{856a30b7-8ce7-4f98-80f0-d61897137f61}</Project>
+      <Name>CharacterThrowdown.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
