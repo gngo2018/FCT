@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CharacterThrowdown.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace CharacterThrowdown.Models
     {
         public int CharacterId { get; set; }
         public string CharacterName { get; set; }
-        public string CharacterUniverse { get; set; }
+        public Universe CharacterUniverse { get; set; }
         public string CharacterAbillity { get; set; }
     }
 }

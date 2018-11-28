@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace CharacterThrowdown.Models
 {
-    public class CharacterCreate
+    public class ItemCreate
     {
         [Required]
         [MinLength(1, ErrorMessage = "Please enter at least 1 character")]
         [MaxLength(100, ErrorMessage = "There are too many characters in this field")]
-        public string CharacterName { get; set; }
-        public Universe CharacterUniverse { get; set; }
-        public string CharacterAbillity { get; set; }
+        public string ItemName { get; set; }
+        public string ItemDescription { get; set; }
+        public TypeOfItem ItemType { get; set; }
 
-        public override string ToString() => CharacterName;
+        public override string ToString() => ItemName;
     }
 }
