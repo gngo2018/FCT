@@ -100,6 +100,29 @@ namespace CharacterThrowDown.WebMVC.Controllers
             return View();
         }
 
+        //GET: Character Delete
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateCharacterService();
+            var model = svc.GetCharacterById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateCharacterService();
+
+            service.DeleteCharacter(id);
+
+            TempData["SaveResult"] = "Your Character was deleted. Shame... they had no choice.";
+            return RedirectToAction("Index");
+        }
+
         private CharacterService CreateCharacterService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

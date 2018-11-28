@@ -93,5 +93,19 @@ namespace CharacterThrowdown.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteCharacter(int characterId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Characters
+                        .Single(e => e.CharacterId == characterId && e.OwnerId == _userId);
+                ctx.Characters.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
