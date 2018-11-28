@@ -34,7 +34,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CharacterCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(model);
             }
@@ -43,6 +43,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
             var service = new CharacterService(userId);
 
             service.CreateCharacter(model);
+
             return RedirectToAction("Index");
         }
 

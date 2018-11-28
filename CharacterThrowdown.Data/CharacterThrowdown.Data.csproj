@@ -56,11 +56,28 @@
   <ItemGroup>
     <Compile Include="Character.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\201811281514144_InitialCreate.cs" />
+    <Compile Include="Migrations\201811281514144_InitialCreate.Designer.cs">
+      <DependentUpon>201811281514144_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811281650334_OwnerId.cs" />
+    <Compile Include="Migrations\201811281650334_OwnerId.Designer.cs">
+      <DependentUpon>201811281650334_OwnerId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811281514144_InitialCreate.resx">
+      <DependentUpon>201811281514144_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811281650334_OwnerId.resx">
+      <DependentUpon>201811281650334_OwnerId.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
