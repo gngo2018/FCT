@@ -14,7 +14,7 @@ namespace CharacterThrowdown.Data.Migrations
                         CharacterId = c.Int(nullable: false, identity: true),
                         CharacterName = c.String(nullable: false),
                         CharacterUniverse = c.String(nullable: false),
-                        CharacterAbillity = c.String(nullable: false),
+                        CharacterAbility = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.CharacterId);
             

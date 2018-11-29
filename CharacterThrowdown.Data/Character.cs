@@ -35,6 +35,6 @@ namespace CharacterThrowdown.Data
         public Universe CharacterUniverse { get; set; }
 
         [Required]
-        public string CharacterAbillity { get; set; }
+        public string CharacterAbility { get; set; }
     }
 }

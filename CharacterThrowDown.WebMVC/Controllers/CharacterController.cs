@@ -69,7 +69,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
                     CharacterId = detail.CharacterId,
                     CharacterName = detail.CharacterName,
                     CharacterUniverse = detail.CharacterUniverse,
-                    CharacterAbillity = detail.CharacterAbillity
+                    CharacterAbility = detail.CharacterAbility
                 };
 
             return View(model);

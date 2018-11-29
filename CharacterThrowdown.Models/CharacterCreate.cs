@@ -13,9 +13,14 @@ namespace CharacterThrowdown.Models
         [Required]
         [MinLength(1, ErrorMessage = "Please enter at least 1 character")]
         [MaxLength(100, ErrorMessage = "There are too many characters in this field")]
+        [Display(Name = "Character Name")]
         public string CharacterName { get; set; }
+
+        [Display(Name = "Universe")]
         public Universe CharacterUniverse { get; set; }
-        public string CharacterAbillity { get; set; }
+
+        [Display(Name = "Character Ability")]
+        public string CharacterAbility { get; set; }
 
         public override string ToString() => CharacterName;
     }

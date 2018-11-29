@@ -56,6 +56,25 @@ namespace CharacterThrowdown.Services
             }
         }
 
+        public ItemDetail GetItemById(int itemId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Items
+                        .Single(e => e.ItemId == itemId && e.OwnerId == _userId);
+                return
+                    new ItemDetail
+                    {
+                        ItemId = entity.ItemId,
+                        ItemName = entity.ItemName,
+                        ItemDescription = entity.ItemDescription,
+                        ItemType = entity.ItemType
+                    };
+            }
+        }
+
 
     }
 }

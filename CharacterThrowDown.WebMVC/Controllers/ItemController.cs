@@ -31,16 +31,35 @@ namespace CharacterThrowDown.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ItemCreate model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+            if (!ModelState.IsValid) return View(model);
+            
+            var service = CreateItemService();
 
+            if (service.CreateItem(model))
+            {
+                TempData["SaveResult"] = "Your item is ready to use!";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Item could not be created");
+
+            return View(model);
+        }
+
+        //GET Item Detail
+        public ActionResult Details (int id)
+        {
+            var svc = CreateItemService();
+            var model = svc.GetItemById(id);
+
+            return View(model);
+        }
+
+        private ItemService CreateItemService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ItemService(userId);
-
-            service.CreateItem(model);
-            return RedirectToAction("Index");
+            return service;
         }
     }
 }
