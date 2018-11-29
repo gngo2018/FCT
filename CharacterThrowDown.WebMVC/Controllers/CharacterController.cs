@@ -90,14 +90,14 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             var service = CreateCharacterService();
 
-            if (service.UpdateNote(model))
+            if (service.UpdateCharacter(model))
             {
                 TempData["SaveResult"] = "Your Character was updated.";
                 return RedirectToAction("Index");
             }
 
             ModelState.AddModelError("", "Your Character could not be updated");
-            return View();
+            return View(model);
         }
 
         //GET: Character Delete

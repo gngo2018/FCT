@@ -77,7 +77,7 @@ namespace CharacterThrowdown.Services
             }
         }
 
-        public bool UpdateNote(CharacterEdit model)
+        public bool UpdateCharacter(CharacterEdit model)
         {
             using(var ctx = new ApplicationDbContext())
             {

@@ -75,6 +75,39 @@ namespace CharacterThrowdown.Services
             }
         }
 
+        public bool UpdateItem (ItemEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Items
+                        .Single(e => e.ItemId == model.ItemId && e.OwnerId == _userId);
+
+                entity.ItemName = model.ItemName;
+                entity.ItemDescription = model.ItemDescription;
+                entity.ItemType = model.ItemType;
+
+                return ctx.SaveChanges() == 1;
+
+            }
+        }
+
+        public bool DeleteItem(int itemId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Items
+                        .Single(e => e.ItemId == itemId && e.OwnerId == _userId);
+
+                ctx.Items.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
 
     }
 }
