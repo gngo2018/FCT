@@ -26,7 +26,8 @@ namespace CharacterThrowdown.Services
                     OwnerId = _userId,
                     CharacterName = model.CharacterName,
                     CharacterUniverse = model.CharacterUniverse,
-                    CharacterAbility = model.CharacterAbility
+                    CharacterAbility = model.CharacterAbility,
+                    ItemId = model.ItemId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -71,7 +72,9 @@ namespace CharacterThrowdown.Services
                         CharacterId = entity.CharacterId,
                         CharacterName = entity.CharacterName,
                         CharacterUniverse = entity.CharacterUniverse,
-                        CharacterAbility = entity.CharacterAbility
+                        CharacterAbility = entity.CharacterAbility,
+                        ItemId = entity.ItemId,
+                        Item = entity.Item
                     };
 
             }
@@ -89,6 +92,8 @@ namespace CharacterThrowdown.Services
                 entity.CharacterName = model.CharacterName;
                 entity.CharacterUniverse = model.CharacterUniverse;
                 entity.CharacterAbility = model.CharacterAbility;
+                entity.ItemId = model.ItemId;
+
 
                 return ctx.SaveChanges() == 1;
             }

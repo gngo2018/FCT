@@ -54,32 +54,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Battle.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="Migrations\201811281514144_InitialCreate.cs" />
-    <Compile Include="Migrations\201811281514144_InitialCreate.Designer.cs">
-      <DependentUpon>201811281514144_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201811291945230_InitialCreate.cs" />
+    <Compile Include="Migrations\201811291945230_InitialCreate.Designer.cs">
+      <DependentUpon>201811291945230_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811281650334_OwnerId.cs" />
-    <Compile Include="Migrations\201811281650334_OwnerId.Designer.cs">
-      <DependentUpon>201811281650334_OwnerId.cs</DependentUpon>
+    <Compile Include="Migrations\201811291955502_AddKey.cs" />
+    <Compile Include="Migrations\201811291955502_AddKey.Designer.cs">
+      <DependentUpon>201811291955502_AddKey.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811282000000_Enum.cs" />
-    <Compile Include="Migrations\201811282000000_Enum.Designer.cs">
-      <DependentUpon>201811282000000_Enum.cs</DependentUpon>
+    <Compile Include="Migrations\201811292003534_Update2.cs" />
+    <Compile Include="Migrations\201811292003534_Update2.Designer.cs">
+      <DependentUpon>201811292003534_Update2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811282103118_Item.cs" />
-    <Compile Include="Migrations\201811282103118_Item.Designer.cs">
-      <DependentUpon>201811282103118_Item.cs</DependentUpon>
+    <Compile Include="Migrations\201811292029086_Update3.cs" />
+    <Compile Include="Migrations\201811292029086_Update3.Designer.cs">
+      <DependentUpon>201811292029086_Update3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811282143109_Owner.cs" />
-    <Compile Include="Migrations\201811282143109_Owner.Designer.cs">
-      <DependentUpon>201811282143109_Owner.cs</DependentUpon>
+    <Compile Include="Migrations\201811292058348_Update4.cs" />
+    <Compile Include="Migrations\201811292058348_Update4.Designer.cs">
+      <DependentUpon>201811292058348_Update4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811291552566_Display.cs" />
-    <Compile Include="Migrations\201811291552566_Display.Designer.cs">
-      <DependentUpon>201811291552566_Display.cs</DependentUpon>
+    <Compile Include="Migrations\201811301506404_Update5.cs" />
+    <Compile Include="Migrations\201811301506404_Update5.Designer.cs">
+      <DependentUpon>201811301506404_Update5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,23 +90,23 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811281514144_InitialCreate.resx">
-      <DependentUpon>201811281514144_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811291945230_InitialCreate.resx">
+      <DependentUpon>201811291945230_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811281650334_OwnerId.resx">
-      <DependentUpon>201811281650334_OwnerId.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811291955502_AddKey.resx">
+      <DependentUpon>201811291955502_AddKey.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811282000000_Enum.resx">
-      <DependentUpon>201811282000000_Enum.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811292003534_Update2.resx">
+      <DependentUpon>201811292003534_Update2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811282103118_Item.resx">
-      <DependentUpon>201811282103118_Item.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811292029086_Update3.resx">
+      <DependentUpon>201811292029086_Update3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811282143109_Owner.resx">
-      <DependentUpon>201811282143109_Owner.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811292058348_Update4.resx">
+      <DependentUpon>201811292058348_Update4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811291552566_Display.resx">
-      <DependentUpon>201811291552566_Display.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811301506404_Update5.resx">
+      <DependentUpon>201811301506404_Update5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

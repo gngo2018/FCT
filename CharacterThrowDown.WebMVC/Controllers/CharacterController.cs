@@ -1,4 +1,5 @@
-﻿using CharacterThrowdown.Models;
+﻿using CharacterThrowdown.Data;
+using CharacterThrowdown.Models;
 using CharacterThrowdown.Services;
 using CharacterThrowDown.Data;
 using Microsoft.AspNet.Identity;
@@ -52,9 +53,12 @@ namespace CharacterThrowDown.WebMVC.Controllers
         //GET: Character Details
         public ActionResult Details(int id)
         {
+            //Character character = db.Characters.Find(id);
+
             var svc = CreateCharacterService();
             var model = svc.GetCharacterById(id);
 
+            //ViewBag.ItemId = new SelectList(db.Characters, "ItemId", "ItemName", character.ItemId);
             return View(model);
         }
 
@@ -69,7 +73,9 @@ namespace CharacterThrowDown.WebMVC.Controllers
                     CharacterId = detail.CharacterId,
                     CharacterName = detail.CharacterName,
                     CharacterUniverse = detail.CharacterUniverse,
-                    CharacterAbility = detail.CharacterAbility
+                    CharacterAbility = detail.CharacterAbility,
+                    ItemId = detail.ItemId
+                    
                 };
 
             return View(model);
@@ -130,5 +136,6 @@ namespace CharacterThrowDown.WebMVC.Controllers
             return service;
         }
 
+        private CharacterDBContext db = new CharacterDBContext();
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,8 @@ namespace CharacterThrowdown.Data
     {
         [Key]
         public int CharacterId { get; set; }
+       
+        public int ItemId { get; set; }
 
         [Required]
         public Guid OwnerId { get; set; }
@@ -36,5 +39,13 @@ namespace CharacterThrowdown.Data
 
         [Required]
         public string CharacterAbility { get; set; }
+
+        
+        public virtual Item Item { get; set; }
+    }
+
+    public class CharacterDBContext : DbContext
+    {
+        public DbSet<Character> Characters { get; set; }
     }
 }

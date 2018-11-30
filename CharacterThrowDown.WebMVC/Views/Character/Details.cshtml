@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>CharacterDetail</h4>
+    <h4>Character Detail</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -40,6 +40,22 @@
 
         <dd>
             @Html.DisplayFor(model => model.CharacterAbility)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.ItemName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.ItemName)
         </dd>
 
     </dl>

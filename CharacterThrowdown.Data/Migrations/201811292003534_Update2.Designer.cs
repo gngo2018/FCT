@@ -7,13 +7,13 @@ namespace CharacterThrowdown.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class OwnerId : IMigrationMetadata
+    public sealed partial class Update2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(OwnerId));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Update2));
         
         string IMigrationMetadata.Id
         {
-            get { return "201811281650334_OwnerId"; }
+            get { return "201811292003534_Update2"; }
         }
         
         string IMigrationMetadata.Source

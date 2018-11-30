@@ -26,7 +26,7 @@ namespace CharacterThrowdown.Services
                     OwnerId = _userId,
                     ItemName = model.ItemName,
                     ItemDescription = model.ItemDescription,
-                    ItemType = model.ItemType
+                    ItemType = model.ItemType,
                 };
 
             using (var ctx = new ApplicationDbContext())

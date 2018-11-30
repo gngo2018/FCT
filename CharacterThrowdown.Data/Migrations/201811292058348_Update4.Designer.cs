@@ -7,13 +7,13 @@ namespace CharacterThrowdown.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class Enum : IMigrationMetadata
+    public sealed partial class Update4 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Enum));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Update4));
         
         string IMigrationMetadata.Id
         {
-            get { return "201811282000000_Enum"; }
+            get { return "201811292058348_Update4"; }
         }
         
         string IMigrationMetadata.Source

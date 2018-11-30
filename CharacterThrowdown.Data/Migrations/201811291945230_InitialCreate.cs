@@ -12,11 +12,27 @@ namespace CharacterThrowdown.Data.Migrations
                 c => new
                     {
                         CharacterId = c.Int(nullable: false, identity: true),
+                        ItemId = c.Int(nullable: false),
+                        OwnerId = c.Guid(nullable: false),
                         CharacterName = c.String(nullable: false),
-                        CharacterUniverse = c.String(nullable: false),
+                        CharacterUniverse = c.Int(nullable: false),
                         CharacterAbility = c.String(nullable: false),
                     })
-                .PrimaryKey(t => t.CharacterId);
+                .PrimaryKey(t => t.CharacterId)
+                .ForeignKey("dbo.Item", t => t.ItemId, cascadeDelete: true)
+                .Index(t => t.ItemId);
+            
+            CreateTable(
+                "dbo.Item",
+                c => new
+                    {
+                        ItemId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        ItemName = c.String(nullable: false),
+                        ItemDescription = c.String(nullable: false),
+                        ItemType = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ItemId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -96,15 +112,18 @@ namespace CharacterThrowdown.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Character", "ItemId", "dbo.Item");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Character", new[] { "ItemId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Item");
             DropTable("dbo.Character");
         }
     }

@@ -3,16 +3,16 @@ namespace CharacterThrowdown.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Owner : DbMigration
+    public partial class AddKey : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Item", "OwnerId", c => c.Guid(nullable: false));
+            AlterColumn("dbo.Item", "ItemDescription", c => c.String());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Item", "OwnerId");
+            AlterColumn("dbo.Item", "ItemDescription", c => c.String(nullable: false));
         }
     }
 }
