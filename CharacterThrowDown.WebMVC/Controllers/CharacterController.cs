@@ -47,6 +47,8 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             ModelState.AddModelError("", "Character was unable to be created, please try again");
 
+            ViewBag.ItemId = new SelectList(db.Items, "ItemId", "ItemName", model.ItemId);
+
             return View(model);
         }
 
@@ -65,6 +67,8 @@ namespace CharacterThrowDown.WebMVC.Controllers
         //GET: Character Edit
         public ActionResult Edit(int id)
         {
+            var itemList = new SelectList(db.Items, "ItemId", "ItemName");
+            ViewBag.ItemId = itemList;
             var service = CreateCharacterService();
             var detail = service.GetCharacterById(id);
             var model =
@@ -94,7 +98,18 @@ namespace CharacterThrowDown.WebMVC.Controllers
                 return View(model);
             }
 
+            
+
             var service = CreateCharacterService();
+
+            Character character = db.Characters.Find(id);
+            var list = new List<Item>();
+            foreach(var c in db.Characters)
+            {
+                list.Add(c.Item);
+            }
+            ViewBag.ItemId = new SelectList(db.Items, "ItemId", "ItemName", character.ItemId);
+
 
             if (service.UpdateCharacter(model))
             {
@@ -136,6 +151,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
             return service;
         }
 
-        private CharacterDBContext db = new CharacterDBContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
+
     }
 }

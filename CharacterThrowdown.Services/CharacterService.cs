@@ -51,10 +51,15 @@ namespace CharacterThrowdown.Services
                             {
                                 CharacterId = e.CharacterId,
                                 CharacterName = e.CharacterName,
+                                ItemId = e.ItemId,
+                                Item = e.Item
                             }
 
                         );
-                return query.ToArray();
+
+                var newList = query.ToList();
+
+                return newList;
             }
         }
 
