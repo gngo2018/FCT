@@ -79,9 +79,9 @@ namespace CharacterThrowdown.Services
                         BattleId = entity.BattleId,
                         Location = entity.Location,
                         FirstCharacterId = entity.FirstCharacterId,
-                        FirstCharacter = entity.FirstCharacter,
-                        SecondCharacterId = entity.SecondCharacterId,
-                        SecondCharacter = entity.SecondCharacter,
+                        FirstCharacter = ctx.Characters.Single(e => e.CharacterId == entity.FirstCharacterId),
+                        SecondCharacterId = entity.SecondCharacterId,        
+                        SecondCharacter = ctx.Characters.Single(e => e.CharacterId == entity.SecondCharacterId),
                         WinnerCharacterId = entity.WinnerCharacterId,
                         WinnerCharacter = entity.WinnerCharacter
                     };
