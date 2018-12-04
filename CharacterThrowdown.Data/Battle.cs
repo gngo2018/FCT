@@ -22,6 +22,7 @@ namespace CharacterThrowdown.Data
         public virtual Character FirstCharacter { get; set; }
         public virtual Character SecondCharacter { get; set; }
         public virtual Character WinnerCharacter { get; set; }
+        
 
     }
 }

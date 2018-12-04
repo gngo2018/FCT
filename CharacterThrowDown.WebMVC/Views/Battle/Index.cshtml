@@ -35,10 +35,10 @@
             @Html.DisplayFor(modelItem => item.Location)
         </td>
         <td>
-            @Html.DisplayFor("FirstCharacterId", modelItem => item.FirstCharacter.CharacterName)
+            @Html.DisplayFor(modelItem => item.FirstCharacter.CharacterName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SecondCharacterId)
+            @Html.DisplayFor(modelItem => item.SecondCharacter.CharacterName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.BattleId }) |

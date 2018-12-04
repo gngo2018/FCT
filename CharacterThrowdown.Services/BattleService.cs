@@ -26,9 +26,9 @@ namespace CharacterThrowdown.Services
                     OwnerId = _userId,
                     Location = model.Location,
                     FirstCharacterId = model.FirstCharacterId,
-                    SecondCharacterId = model.SecondCharacterId,
-                    FirstCharacter = model.FirstCharacter,
-                    SecondCharacter = model.SecondCharacter
+                    SecondCharacterId = model.SecondCharacterId
+                    //FirstCharacter = model.FirstCharacter,
+                    //SecondCharacter = model.SecondCharacter
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -53,8 +53,8 @@ namespace CharacterThrowdown.Services
                                 FirstCharacterId = e.FirstCharacterId,
                                 SecondCharacterId = e.SecondCharacterId,
                                 Location = e.Location,
-                                FirstCharacterName = e.FirstCharacter.CharacterName,
-                                SecondCharacterName = e.SecondCharacter.CharacterName
+                                FirstCharacter= ctx.Characters.FirstOrDefault(f => f.CharacterId == e.FirstCharacterId),
+                                SecondCharacter = ctx.Characters.FirstOrDefault(f => f.CharacterId == e.SecondCharacterId),
                             }
 
                         );
