@@ -1,0 +1,58 @@
+﻿@model CharacterThrowdown.Models.BattleDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BattleDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BattleId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BattleId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstCharacter.CharacterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstCharacter.CharacterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondCharacterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondCharacterId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WinnerCharacterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WinnerCharacterId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -27,6 +27,10 @@ namespace CharacterThrowDown.WebMVC.Controllers
         //GET: Create Character
         public ActionResult Create()
         {
+            //var itemList = new SelectList(db.Characters, "ItemId", "ItemName");
+            //ViewBag.ItemId = itemList;
+            ViewBag.ItemId = new SelectList(db.Items, "ItemId", "ItemName");
+
             return View();
         }
 
@@ -35,6 +39,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CharacterCreate model)
         {
+
             if (!ModelState.IsValid) return View(model);
             
             var service = CreateCharacterService();
@@ -47,7 +52,6 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             ModelState.AddModelError("", "Character was unable to be created, please try again");
 
-            ViewBag.ItemId = new SelectList(db.Items, "ItemId", "ItemName", model.ItemId);
 
             return View(model);
         }
@@ -55,12 +59,9 @@ namespace CharacterThrowDown.WebMVC.Controllers
         //GET: Character Details
         public ActionResult Details(int id)
         {
-            //Character character = db.Characters.Find(id);
-
             var svc = CreateCharacterService();
             var model = svc.GetCharacterById(id);
 
-            //ViewBag.ItemId = new SelectList(db.Characters, "ItemId", "ItemName", character.ItemId);
             return View(model);
         }
 
@@ -71,6 +72,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
             ViewBag.ItemId = itemList;
             var service = CreateCharacterService();
             var detail = service.GetCharacterById(id);
+
             var model =
                 new CharacterEdit
                 {
@@ -97,25 +99,23 @@ namespace CharacterThrowDown.WebMVC.Controllers
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }
-
-            
-
+           
             var service = CreateCharacterService();
-
             Character character = db.Characters.Find(id);
-            var list = new List<Item>();
-            foreach(var c in db.Characters)
-            {
-                list.Add(c.Item);
-            }
-            ViewBag.ItemId = new SelectList(db.Items, "ItemId", "ItemName", character.ItemId);
 
+           // var list = new List<Item>();
+           // foreach(var c in db.Characters)
+           // {
+           //     list.Add(c.Item);
+           // }
 
             if (service.UpdateCharacter(model))
             {
                 TempData["SaveResult"] = "Your Character was updated.";
                 return RedirectToAction("Index");
             }
+
+            ViewBag.ItemId = new SelectList(db.Items, "ItemId", "ItemName", character.ItemId);
 
             ModelState.AddModelError("", "Your Character could not be updated");
             return View(model);

@@ -25,7 +25,6 @@ namespace CharacterThrowdown.Models
         [Display(Name = "Item Id")]
         public int ItemId { get; set; }
 
-        public IEnumerable<Item> ItemList { get; set; }
         public virtual Item Item { get; set; }
     }
 }

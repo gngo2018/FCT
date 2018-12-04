@@ -27,7 +27,7 @@ namespace CharacterThrowdown.Services
                     CharacterName = model.CharacterName,
                     CharacterUniverse = model.CharacterUniverse,
                     CharacterAbility = model.CharacterAbility,
-                    ItemId = model.ItemId
+                    ItemId = model.ItemId,
                 };
 
             using (var ctx = new ApplicationDbContext())

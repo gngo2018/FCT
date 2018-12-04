@@ -26,8 +26,7 @@ namespace CharacterThrowdown.Models
         [Display(Name = "Item Id # Character will use")]
         public int ItemId { get; set; }
 
-        //[Display(Name = "Item Id # that this Character will use")]
-        //public virtual Item Item { get; set; }
+        public virtual Item Item { get; set; }
 
         public override string ToString() => CharacterName;
     }

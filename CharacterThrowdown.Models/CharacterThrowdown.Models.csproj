@@ -54,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BattleCreate.cs" />
+    <Compile Include="BattleDetail.cs" />
+    <Compile Include="BattleListItem.cs" />
     <Compile Include="CharacterCreate.cs" />
     <Compile Include="CharacterDetail.cs" />
     <Compile Include="CharacterEdit.cs" />

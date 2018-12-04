@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201811301506404_Update5.Designer.cs">
       <DependentUpon>201811301506404_Update5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812041637324_Battles.cs" />
+    <Compile Include="Migrations\201812041637324_Battles.Designer.cs">
+      <DependentUpon>201812041637324_Battles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -107,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811301506404_Update5.resx">
       <DependentUpon>201811301506404_Update5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812041637324_Battles.resx">
+      <DependentUpon>201812041637324_Battles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

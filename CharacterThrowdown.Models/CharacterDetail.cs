@@ -22,7 +22,7 @@ namespace CharacterThrowdown.Models
         [Display(Name = "Character Ability")]
         public string CharacterAbility { get; set; }
 
-        [Display(Name = "Weapon of Choice")]
+        [Display(Name = "Weapon Id")]
         public int ItemId { get; set; }
 
         [Display(Name = "Weapon Name")]

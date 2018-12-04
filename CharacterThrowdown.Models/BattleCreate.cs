@@ -1,27 +1,27 @@
-﻿using System;
+﻿using CharacterThrowdown.Data;
+using CharacterThrowDown.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CharacterThrowdown.Data
+namespace CharacterThrowdown.Models
 {
-    public class Battle
+    public class BattleCreate
     {
-        [Key]
-        public int BattleId { get; set; }
-        public int FirstCharacterId { get; set; }
-        public int SecondCharacterId { get; set; }
-        public int WinnerCharacterId { get; set; }
-        [Required]
-        public Guid OwnerId { get; set; }
-        [Required]
+        [Display(Name= "Battle Location")]
         public string Location { get; set; }
+        [Display(Name= "Character 1")]
+        public int FirstCharacterId { get; set; }
+        [Display(Name = "Character 2")]
+        public int SecondCharacterId { get; set; }
 
         public virtual Character FirstCharacter { get; set; }
         public virtual Character SecondCharacter { get; set; }
-        public virtual Character WinnerCharacter { get; set; }
 
+        public override string ToString() => Location;
     }
+
 }
