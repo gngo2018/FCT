@@ -26,7 +26,9 @@ namespace CharacterThrowdown.Services
                     OwnerId = _userId,
                     Location = model.Location,
                     FirstCharacterId = model.FirstCharacterId,
-                    SecondCharacterId = model.SecondCharacterId
+                    SecondCharacterId = model.SecondCharacterId,
+                    FirstItemId = model.FirstItemId,
+                    SecondItemId = model.SecondItemId
                     //FirstCharacter = model.FirstCharacter,
                     //SecondCharacter = model.SecondCharacter
                 };
@@ -72,22 +74,41 @@ namespace CharacterThrowdown.Services
                 var entity =
                     ctx
                         .Battles
-                        .Single(e => e.BattleId == battleId && e.OwnerId == _userId);
+                        .FirstOrDefault(e => e.BattleId == battleId && e.OwnerId == _userId);
 
+                var model = new BattleDetail
+                {
+                    BattleId = entity.BattleId,
+                    Location = entity.Location,
+                    FirstCharacterId = entity.FirstCharacterId,
+                    SecondCharacterId = entity.SecondCharacterId,
+                    FirstItemId = entity.FirstItemId,
+                    SecondItemId = entity.SecondItemId,
+                    WinnerCharacterId = entity.WinnerCharacterId,
+                    //WinnerCharacter = entity.WinnerCharacter
+                };
 
-                    return
-                        new BattleDetail
-                        {
-                            BattleId = entity.BattleId,
-                            Location = entity.Location,
-                            FirstCharacterId = entity.FirstCharacterId,
-                            FirstCharacter = ctx.Characters.Single(e => e.CharacterId == entity.FirstCharacterId),
-                            SecondCharacterId = entity.SecondCharacterId,
-                            SecondCharacter = ctx.Characters.Single(e => e.CharacterId == entity.SecondCharacterId),
-                            WinnerCharacterId = entity.WinnerCharacterId,
-                            WinnerCharacter = entity.WinnerCharacter
-                        };
- 
+                if (ctx.Characters.Any(c => c.CharacterId == model.FirstCharacterId))
+                {
+                    model.FirstCharacter = ctx.Characters.Single(e => e.CharacterId == entity.FirstCharacterId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.SecondCharacterId))
+                {
+                    model.SecondCharacter = ctx.Characters.Single(e => e.CharacterId == entity.SecondCharacterId);
+                }
+
+                if (ctx.Items.Any(c => c.ItemId == model.FirstItemId))
+                {
+                    model.FirstItem = ctx.Items.Single(e => e.ItemId == entity.FirstItemId);
+                }
+
+                if (ctx.Items.Any(c => c.ItemId == model.SecondItemId))
+                {
+                    model.SecondItem = ctx.Items.Single(e => e.ItemId == entity.SecondItemId);
+                }
+
+                return model;
             }
         }
 
@@ -103,6 +124,8 @@ namespace CharacterThrowdown.Services
                 entity.Location = model.Location;
                 entity.FirstCharacterId = model.FirstCharacterId;
                 entity.SecondCharacterId = model.SecondCharacterId;
+                entity.FirstItemId = model.FirstItemId;
+                entity.SecondItemId = model.SecondItemId;
 
                 return ctx.SaveChanges() == 1;
             }

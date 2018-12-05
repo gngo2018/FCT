@@ -22,12 +22,6 @@ namespace CharacterThrowdown.Models
         [Display(Name = "Character Ability")]
         public string CharacterAbility { get; set; }
 
-        [Display(Name = "Weapon Id")]
-        public int ItemId { get; set; }
-
-        [Display(Name = "Weapon Name")]
-        public virtual Item Item { get; set; }
-
         public override string ToString() => $"[{CharacterId}] {CharacterName}";
     }
 }

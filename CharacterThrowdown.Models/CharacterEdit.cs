@@ -21,10 +21,5 @@ namespace CharacterThrowdown.Models
 
         [Display(Name = "Character Ability")]
         public string CharacterAbility { get; set; }
-
-        [Display(Name = "Item Id")]
-        public int ItemId { get; set; }
-
-        public virtual Item Item { get; set; }
     }
 }

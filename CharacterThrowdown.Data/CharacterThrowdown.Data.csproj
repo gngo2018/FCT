@@ -58,63 +58,11 @@
     <Compile Include="Character.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="Migrations\201811291945230_InitialCreate.cs" />
-    <Compile Include="Migrations\201811291945230_InitialCreate.Designer.cs">
-      <DependentUpon>201811291945230_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811291955502_AddKey.cs" />
-    <Compile Include="Migrations\201811291955502_AddKey.Designer.cs">
-      <DependentUpon>201811291955502_AddKey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811292003534_Update2.cs" />
-    <Compile Include="Migrations\201811292003534_Update2.Designer.cs">
-      <DependentUpon>201811292003534_Update2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811292029086_Update3.cs" />
-    <Compile Include="Migrations\201811292029086_Update3.Designer.cs">
-      <DependentUpon>201811292029086_Update3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811292058348_Update4.cs" />
-    <Compile Include="Migrations\201811292058348_Update4.Designer.cs">
-      <DependentUpon>201811292058348_Update4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811301506404_Update5.cs" />
-    <Compile Include="Migrations\201811301506404_Update5.Designer.cs">
-      <DependentUpon>201811301506404_Update5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812041637324_Battles.cs" />
-    <Compile Include="Migrations\201812041637324_Battles.Designer.cs">
-      <DependentUpon>201812041637324_Battles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811291945230_InitialCreate.resx">
-      <DependentUpon>201811291945230_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811291955502_AddKey.resx">
-      <DependentUpon>201811291955502_AddKey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811292003534_Update2.resx">
-      <DependentUpon>201811292003534_Update2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811292029086_Update3.resx">
-      <DependentUpon>201811292029086_Update3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811292058348_Update4.resx">
-      <DependentUpon>201811292058348_Update4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811301506404_Update5.resx">
-      <DependentUpon>201811301506404_Update5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812041637324_Battles.resx">
-      <DependentUpon>201812041637324_Battles.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

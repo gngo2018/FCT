@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Battle Result</h2>
 
 <div>
-    <h4>BattleDetail</h4>
+    <h4>And the winner is...</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -36,12 +36,23 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FirstCharacter.CharacterName)
+            @Html.DisplayName("Character 1")
+
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.FirstCharacter.CharacterName)
         </dd>
+
+        <dt>
+            @Html.DisplayName("Character 1 Weapon")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstItem.ItemName)
+        </dd>
+
         <br />
         <dt>
             @Html.DisplayNameFor(model => model.SecondCharacterId)
@@ -52,11 +63,20 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SecondCharacter.CharacterName)
+            @Html.DisplayName("Character 2")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.SecondCharacter.CharacterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Character 2 Weapon")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondItem.ItemName)
         </dd>
         <br />
         <dt>

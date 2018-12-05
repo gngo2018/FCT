@@ -27,9 +27,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
         //GET: Create Character
         public ActionResult Create()
         {
-            //var itemList = new SelectList(db.Characters, "ItemId", "ItemName");
-            //ViewBag.ItemId = itemList;
-            ViewBag.ItemId = new SelectList(db.Items, "ItemId", "ItemName");
+            //ViewBag.ItemId = new SelectList(db.Items, "ItemId", "ItemName");
 
             return View();
         }
@@ -68,8 +66,8 @@ namespace CharacterThrowDown.WebMVC.Controllers
         //GET: Character Edit
         public ActionResult Edit(int id)
         {
-            var itemList = new SelectList(db.Items, "ItemId", "ItemName");
-            ViewBag.ItemId = itemList;
+            //var itemList = new SelectList(db.Items, "ItemId", "ItemName");
+            //ViewBag.ItemId = itemList;
             var service = CreateCharacterService();
             var detail = service.GetCharacterById(id);
 
@@ -80,7 +78,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
                     CharacterName = detail.CharacterName,
                     CharacterUniverse = detail.CharacterUniverse,
                     CharacterAbility = detail.CharacterAbility,
-                    ItemId = detail.ItemId
+                    //ItemId = detail.ItemId
                     
                 };
 
@@ -101,7 +99,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
             }
            
             var service = CreateCharacterService();
-            Character character = db.Characters.Find(id);
+           // Character character = db.Characters.Find(id);
 
            // var list = new List<Item>();
            // foreach(var c in db.Characters)
@@ -115,7 +113,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ItemId = new SelectList(db.Items, "ItemId", "ItemName", character.ItemId);
+            //ViewBag.ItemId = new SelectList(db.Items, "ItemId", "ItemName", character.ItemId);
 
             ModelState.AddModelError("", "Your Character could not be updated");
             return View(model);

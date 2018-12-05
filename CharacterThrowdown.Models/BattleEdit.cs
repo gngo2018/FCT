@@ -13,7 +13,11 @@ namespace CharacterThrowdown.Models
         public string Location { get; set; }
         public int FirstCharacterId { get; set; }
         public int SecondCharacterId { get; set; }
+        public int FirstItemId { get; set; }
+        public int SecondItemId { get; set; }
 
+        public virtual Item FirstItem { get; set; }
+        public virtual Item SecondItem { get; set; }
         public virtual Character FirstCharacter { get; set; }
         public virtual Character SecondCharacter { get; set; }
     }

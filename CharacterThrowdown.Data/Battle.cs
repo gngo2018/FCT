@@ -13,6 +13,8 @@ namespace CharacterThrowdown.Data
         public int BattleId { get; set; }
         public int FirstCharacterId { get; set; }
         public int SecondCharacterId { get; set; }
+        public int FirstItemId { get; set; }
+        public int SecondItemId { get; set; }
         public int WinnerCharacterId { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
@@ -21,6 +23,8 @@ namespace CharacterThrowdown.Data
 
         public virtual Character FirstCharacter { get; set; }
         public virtual Character SecondCharacter { get; set; }
+        public virtual Item FirstItem { get; set; }
+        public virtual Item SecondItem { get; set; }
         public virtual Character WinnerCharacter { get; set; }
         
 

@@ -18,10 +18,11 @@ namespace CharacterThrowdown.Models
         public int FirstCharacterId { get; set; }
         [Display(Name = "Character 2")]
         public int SecondCharacterId { get; set; }
+        [Display(Name = "Character 1 Weapon")]
         public int WinnerCharacterId { get; set; }
 
-        public string FirstCharacterName { get; set; }
-        public string SecondCharacterName { get; set; }
+//        public string FirstCharacterName { get; set; }
+//        public string SecondCharacterName { get; set; }
         
         public virtual Character FirstCharacter { get; set; }
         public virtual Character SecondCharacter { get; set; }

@@ -32,6 +32,9 @@ namespace CharacterThrowDown.WebMVC.Controllers
             ViewBag.FirstCharacterId = characterList;
             ViewBag.SecondCharacterId = characterList;
 
+            var itemList = new SelectList(db.Items, "ItemId", "ItemName");
+            ViewBag.FirstItemId = itemList;
+            ViewBag.SecondItemId = itemList;
             return View();
         }
 
@@ -54,6 +57,8 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             ViewBag.FirstCharacterId = new SelectList(db.Characters, "FirstCharacterId", "CharacterName", model.FirstCharacterId);
             ViewBag.SecondCharacterId = new SelectList(db.Characters, "SecondCharacterId", "CharacterName", model.SecondCharacterId);
+            ViewBag.FirstItemId = new SelectList(db.Items, "FirstItemId", "ItemName", model.FirstItemId);
+            ViewBag.SecondItemId = new SelectList(db.Items, "SecondItemId", "ItemName", model.SecondItemId);
 
             return View(model);
         }
@@ -75,6 +80,10 @@ namespace CharacterThrowDown.WebMVC.Controllers
             ViewBag.FirstCharacterId = characterList;
             ViewBag.SecondCharacterId = characterList;
 
+            var itemList = new SelectList(db.Items, "ItemId", "ItemName");
+            ViewBag.FirstItemId = itemList;
+            ViewBag.SecondItemId = itemList;
+
             var service = CreateBattleService();
             var detail = service.GetBattleById(id);
             var model =
@@ -83,7 +92,9 @@ namespace CharacterThrowDown.WebMVC.Controllers
                     BattleId = detail.BattleId,
                     Location = detail.Location,
                     FirstCharacterId = detail.FirstCharacterId,
-                    SecondCharacterId = detail.SecondCharacterId
+                    SecondCharacterId = detail.SecondCharacterId,
+                    FirstItemId = detail.FirstItemId,
+                    SecondItemId = detail.SecondItemId
                 };
             return View(model);
         }
@@ -112,6 +123,8 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             ViewBag.FirstCharacterId = new SelectList(db.Characters, "FirstCharacterId", "CharacterName", model.FirstCharacterId);
             ViewBag.SecondCharacterId = new SelectList(db.Characters, "SecondCharacterId", "CharacterName", model.SecondCharacterId);
+            ViewBag.FirstItemId = new SelectList(db.Items, "FirstItemId", "ItemName", model.FirstItemId);
+            ViewBag.SecondItemId = new SelectList(db.Items, "SecondItemId", "ItemName", model.SecondItemId);
 
             ModelState.AddModelError("", "Your Battle could not be updated");
             return View(model);

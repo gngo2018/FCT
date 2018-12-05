@@ -16,17 +16,12 @@ namespace CharacterThrowdown.Models
         [Display(Name = "Character Name")]
         public string CharacterName { get; set; }
 
+        [Required]
         [Display(Name = "Universe")]
         public Universe CharacterUniverse { get; set; }
 
         [Display(Name = "Character Ability")]
         public string CharacterAbility { get; set; }
-
-        [Required(ErrorMessage = "Weapon needed for battle. Please choose or create a new item.")]
-        [Display(Name = "Item Id # Character will use")]
-        public int ItemId { get; set; }
-
-        public virtual Item Item { get; set; }
 
         public override string ToString() => CharacterName;
     }
