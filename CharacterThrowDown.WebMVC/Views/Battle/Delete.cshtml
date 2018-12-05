@@ -1,0 +1,64 @@
+﻿@model CharacterThrowdown.Models.BattleDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>BattleDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BattleId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BattleId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstCharacterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstCharacterId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondCharacterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondCharacterId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WinnerCharacterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WinnerCharacterId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

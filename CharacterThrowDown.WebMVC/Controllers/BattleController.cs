@@ -1,4 +1,5 @@
-﻿using CharacterThrowdown.Models;
+﻿using CharacterThrowdown.Data;
+using CharacterThrowdown.Models;
 using CharacterThrowdown.Services;
 using CharacterThrowDown.Data;
 using Microsoft.AspNet.Identity;
@@ -62,8 +63,83 @@ namespace CharacterThrowDown.WebMVC.Controllers
         {
             var svc = CreateBattleService();
             var model = svc.GetBattleById(id);
+            if (!ModelState.IsValid) return View(model);       
 
             return View(model);
+        }
+
+        //GET: Battle Edit
+        public ActionResult Edit (int id)
+        {
+            var characterList = new SelectList(db.Characters, "CharacterId", "CharacterName");
+            ViewBag.FirstCharacterId = characterList;
+            ViewBag.SecondCharacterId = characterList;
+
+            var service = CreateBattleService();
+            var detail = service.GetBattleById(id);
+            var model =
+                new BattleEdit
+                {
+                    BattleId = detail.BattleId,
+                    Location = detail.Location,
+                    FirstCharacterId = detail.FirstCharacterId,
+                    SecondCharacterId = detail.SecondCharacterId
+                };
+            return View(model);
+        }
+
+        //POST: Battle Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit (int id, BattleEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.BattleId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            Battle battle = db.Battles.Find(id);
+            var service = CreateBattleService();
+
+            if (service.UpdateBattle(model))
+            {
+                TempData["SaveResult"] = "Your Battle was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.FirstCharacterId = new SelectList(db.Characters, "FirstCharacterId", "CharacterName", model.FirstCharacterId);
+            ViewBag.SecondCharacterId = new SelectList(db.Characters, "SecondCharacterId", "CharacterName", model.SecondCharacterId);
+
+            ModelState.AddModelError("", "Your Battle could not be updated");
+            return View(model);
+
+        }
+
+
+        //GET: Battle Delete
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateBattleService();
+            var model = svc.GetBattleById(id);
+
+            return View(model);
+        }
+
+        //POST: Battle Delete
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateBattleService();
+
+            service.DeleteBattle(id);
+
+            TempData["SaveResult"] = "Your Character was deleted. Shame... they had no choice.";
+            return RedirectToAction("Index");
         }
 
         private CharacterService CreateCharacterService()

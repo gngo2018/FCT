@@ -73,18 +73,52 @@ namespace CharacterThrowdown.Services
                     ctx
                         .Battles
                         .Single(e => e.BattleId == battleId && e.OwnerId == _userId);
-                return
-                    new BattleDetail
-                    {
-                        BattleId = entity.BattleId,
-                        Location = entity.Location,
-                        FirstCharacterId = entity.FirstCharacterId,
-                        FirstCharacter = ctx.Characters.Single(e => e.CharacterId == entity.FirstCharacterId),
-                        SecondCharacterId = entity.SecondCharacterId,        
-                        SecondCharacter = ctx.Characters.Single(e => e.CharacterId == entity.SecondCharacterId),
-                        WinnerCharacterId = entity.WinnerCharacterId,
-                        WinnerCharacter = entity.WinnerCharacter
-                    };
+
+
+                    return
+                        new BattleDetail
+                        {
+                            BattleId = entity.BattleId,
+                            Location = entity.Location,
+                            FirstCharacterId = entity.FirstCharacterId,
+                            FirstCharacter = ctx.Characters.Single(e => e.CharacterId == entity.FirstCharacterId),
+                            SecondCharacterId = entity.SecondCharacterId,
+                            SecondCharacter = ctx.Characters.Single(e => e.CharacterId == entity.SecondCharacterId),
+                            WinnerCharacterId = entity.WinnerCharacterId,
+                            WinnerCharacter = entity.WinnerCharacter
+                        };
+ 
+            }
+        }
+
+        public bool UpdateBattle(BattleEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Battles
+                        .Single(e => e.BattleId == model.BattleId && e.OwnerId == _userId);
+
+                entity.Location = model.Location;
+                entity.FirstCharacterId = model.FirstCharacterId;
+                entity.SecondCharacterId = model.SecondCharacterId;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteBattle(int battleId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Battles
+                        .Single(e => e.BattleId == battleId && e.OwnerId == _userId);
+                ctx.Battles.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
