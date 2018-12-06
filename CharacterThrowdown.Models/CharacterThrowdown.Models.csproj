@@ -58,6 +58,10 @@
     <Compile Include="BattleDetail.cs" />
     <Compile Include="BattleEdit.cs" />
     <Compile Include="BattleListItem.cs" />
+    <Compile Include="BracketCreate.cs" />
+    <Compile Include="BracketDetail.cs" />
+    <Compile Include="BracketEdit.cs" />
+    <Compile Include="BracketListItem.cs" />
     <Compile Include="CharacterCreate.cs" />
     <Compile Include="CharacterDetail.cs" />
     <Compile Include="CharacterEdit.cs" />
