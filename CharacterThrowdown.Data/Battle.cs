@@ -20,12 +20,14 @@ namespace CharacterThrowdown.Data
         public Guid OwnerId { get; set; }
         [Required]
         public string Location { get; set; }
+        public string BattleName { get; set; }
+
 
         public virtual Character FirstCharacter { get; set; }
         public virtual Character SecondCharacter { get; set; }
+        public virtual Character WinnerCharacter { get; set; }
         public virtual Item FirstItem { get; set; }
         public virtual Item SecondItem { get; set; }
-        public virtual Character WinnerCharacter { get; set; }
         
 
     }

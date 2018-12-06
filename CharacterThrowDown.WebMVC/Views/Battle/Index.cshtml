@@ -15,6 +15,9 @@
             @Html.DisplayNameFor(model => model.BattleId)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.BattleName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Location)
         </th>
         <th>
@@ -32,6 +35,9 @@
             @Html.DisplayFor(modelItem => item.BattleId)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.BattleName)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Location)
         </td>
         <td>
@@ -41,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.SecondCharacter.CharacterName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BattleId }) |
-            @Html.ActionLink("Simulate Battle", "Details", new { id=item.BattleId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BattleId })
+            @Html.ActionLink("Edit", "Edit", new { id = item.BattleId }) |
+            @Html.ActionLink("Simulate Battle", "Details", new { id = item.BattleId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.BattleId })
         </td>
     </tr>
 }

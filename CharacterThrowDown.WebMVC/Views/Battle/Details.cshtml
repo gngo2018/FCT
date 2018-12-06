@@ -19,6 +19,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.BattleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BattleName)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Location)
         </dt>
 
@@ -85,6 +93,13 @@
 
         <dd>
             @Html.DisplayFor(model => model.WinnerCharacterId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WinnerCharacter.CharacterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WinnerCharacter.CharacterName)
         </dd>
 
     </dl>

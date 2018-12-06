@@ -12,6 +12,8 @@ namespace CharacterThrowdown.Models
     {
         [Display(Name= "Battle ID")]
         public int BattleId { get; set; }
+        [Display(Name = "Battle Name")]
+        public string BattleName { get; set; }
         [Display(Name = "Battle Location")]
         public string Location { get; set; }
         [Display(Name = "Character 1")]

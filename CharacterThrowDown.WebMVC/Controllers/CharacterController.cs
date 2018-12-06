@@ -149,7 +149,5 @@ namespace CharacterThrowDown.WebMVC.Controllers
             return service;
         }
 
-        private ApplicationDbContext db = new ApplicationDbContext();
-
     }
 }

@@ -10,7 +10,10 @@ namespace CharacterThrowdown.Models
 {
     public class BattleDetail
     {
+        [Display(Name = "Battle ID")]
         public int BattleId { get; set; }
+        [Display(Name = "Battle Name")]
+        public string BattleName { get; set; }
         public string Location { get; set; }
         [Display(Name = "Character 1 ID")]
         public int FirstCharacterId { get; set; }

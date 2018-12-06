@@ -28,10 +28,11 @@ namespace CharacterThrowdown.Services
                     FirstCharacterId = model.FirstCharacterId,
                     SecondCharacterId = model.SecondCharacterId,
                     FirstItemId = model.FirstItemId,
-                    SecondItemId = model.SecondItemId
-                    //FirstCharacter = model.FirstCharacter,
-                    //SecondCharacter = model.SecondCharacter
+                    SecondItemId = model.SecondItemId,
+                    BattleName = model.BattleName
+                    //WinnerCharacterId = model.WinnerCharacterId
                 };
+
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Battles.Add(entity);
@@ -52,6 +53,7 @@ namespace CharacterThrowdown.Services
                             new BattleListItem
                             {
                                 BattleId = e.BattleId,
+                                BattleName = e.BattleName,
                                 FirstCharacterId = e.FirstCharacterId,
                                 SecondCharacterId = e.SecondCharacterId,
                                 Location = e.Location,
@@ -79,6 +81,7 @@ namespace CharacterThrowdown.Services
                 var model = new BattleDetail
                 {
                     BattleId = entity.BattleId,
+                    BattleName = entity.BattleName,
                     Location = entity.Location,
                     FirstCharacterId = entity.FirstCharacterId,
                     SecondCharacterId = entity.SecondCharacterId,
@@ -106,6 +109,26 @@ namespace CharacterThrowdown.Services
                 if (ctx.Items.Any(c => c.ItemId == model.SecondItemId))
                 {
                     model.SecondItem = ctx.Items.Single(e => e.ItemId == entity.SecondItemId);
+                }
+
+                //Random Generator
+                if (ctx.Characters.Any(c => c.CharacterId == model.WinnerCharacterId))
+                {
+                    model.WinnerCharacter = ctx.Characters.Single(e => e.CharacterId == entity.WinnerCharacterId);
+                }
+
+                Random winner = new Random();
+                var outcome = winner.Next(0, 100);
+                if (outcome < 50)
+                {
+                    model.WinnerCharacterId = model.FirstCharacterId;
+                    //ctx.Battles.Add(entity);
+                }
+
+                else
+                {
+                    model.WinnerCharacterId = model.SecondCharacterId;
+                    //ctx.Battles.Add(entity);
                 }
 
                 return model;
