@@ -36,6 +36,7 @@ namespace CharacterThrowDown.Data
         public DbSet<Character> Characters { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<Battle> Battles { get; set; }
+        public DbSet<Bracket> Brackets { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

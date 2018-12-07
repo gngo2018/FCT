@@ -283,10 +283,11 @@
     <Content Include="Views\Battle\Details.cshtml" />
     <Content Include="Views\Battle\Delete.cshtml" />
     <Content Include="Views\Battle\Edit.cshtml" />
+    <Content Include="Views\Bracket\Index.cshtml" />
+    <Content Include="Views\Bracket\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Bracket\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
