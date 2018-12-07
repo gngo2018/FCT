@@ -44,5 +44,15 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             return View(model);
         }
+
+        //POST: Battle Details
+        public ActionResult Details(int id)
+        {
+            var svc = new BracketService();
+            var model = svc.GetBracketById(id);
+            if (!ModelState.IsValid) return View(model);
+
+            return View(model);
+        }
     }
 }

@@ -1,0 +1,225 @@
+﻿@model CharacterThrowdown.Models.BracketDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BracketDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BracketId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BracketId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TournamentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TournamentName)
+        </dd>
+
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstCharacterEightId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstCharacterEightId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondCharacterEightId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondCharacterEightId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstEightWinnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstEightWinnerId)
+        </dd>
+
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThirdCharacterEightId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThirdCharacterEightId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FourthCharacterEightId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FourthCharacterEightId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondEightWinnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondEightWinnerId)
+        </dd>
+
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FifthCharacterEightId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FifthCharacterEightId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SixthCharacterEightId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SixthCharacterEightId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThirdEightWinnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThirdEightWinnerId)
+        </dd>
+
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeventhCharacterEightId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeventhCharacterEightId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EighthCharacterEightId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EighthCharacterEightId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FourthEightWinnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FourthEightWinnerId)
+        </dd>
+
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstCharacterFourId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstCharacterFourId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondCharacterFourId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondCharacterFourId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstFourWinnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstFourWinnerId)
+        </dd>
+
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThirdCharacterFourId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThirdCharacterFourId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FourthCharacterFourId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FourthCharacterFourId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondFourWinnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondFourWinnerId)
+        </dd>
+
+        <br />
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstFourWinnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstFourWinnerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondFourWinnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondFourWinnerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinalWinnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinalWinnerId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BracketId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

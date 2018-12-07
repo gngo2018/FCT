@@ -19,7 +19,7 @@ namespace CharacterThrowdown.Services
             //First 8
             if (outcome < 50)
             {
-                model.FirstEightWinnerId = model.FirstCharacterEightId; 
+                model.FirstEightWinnerId = model.FirstCharacterEightId;
             }
             else
             {
@@ -80,10 +80,11 @@ namespace CharacterThrowdown.Services
                     FirstFourWinnerId = model.FirstFourWinnerId,
                     SecondFourWinnerId = model.SecondFourWinnerId,
                     //Final
-                    FirstCharacterFinalId = model.FirstCharacterFinalId,
-                    SecondCharacterFinalId = model.SecondCharacterFinalId,
+                    FirstCharacterFinalId = model.FirstFourWinnerId,
+                    SecondCharacterFinalId = model.SecondFourWinnerId,
                     FinalWinnerId = model.FinalWinnerId
                 };
+
 
             Random newRandom = new Random();
             var outcomeFour = newRandom.Next(0, 100);
@@ -105,16 +106,16 @@ namespace CharacterThrowdown.Services
             {
                 entity.SecondFourWinnerId = entity.FourthCharacterFourId;
             }
-
-            var outcomeFinal = winner.Next(0, 100);
+            Random finalRandom = new Random();
+            var outcomeFinal = finalRandom.Next(0, 100);
             //Final
             if (outcomeFinal < 50)
             {
-                entity.FinalWinnerId = entity.FirstCharacterFinalId;
+                entity.FinalWinnerId = entity.FirstFourWinnerId;
             }
             else
             {
-                entity.FinalWinnerId = entity .SecondCharacterFinalId;
+                entity.FinalWinnerId = entity.SecondFourWinnerId;
             }
 
             using (var ctx = new ApplicationDbContext())
@@ -122,6 +123,7 @@ namespace CharacterThrowdown.Services
                 ctx.Brackets.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
+
         }
 
         public IEnumerable<BracketListItem> GetBrackets()
@@ -148,5 +150,47 @@ namespace CharacterThrowdown.Services
             }
         }
 
+        public BracketDetail GetBracketById(int bracketId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Brackets
+                        .FirstOrDefault(e => e.BracketId == bracketId);
+
+                var model = new BracketDetail
+                {
+                    BracketId = entity.BracketId,
+                    TournamentName = entity.TournamentName,
+                    Location = entity.Location,
+                    FirstCharacterEightId = entity.FirstCharacterEightId,
+                    SecondCharacterEightId = entity.SecondCharacterEightId,
+                    ThirdCharacterEightId = entity.ThirdCharacterEightId,
+                    FourthCharacterEightId = entity.FourthCharacterEightId,
+                    FifthCharacterEightId = entity.FifthCharacterEightId,
+                    SixthCharacterEightId = entity.SixthCharacterEightId,
+                    SeventhCharacterEightId = entity.SeventhCharacterEightId,
+                    EighthCharacterEightId = entity.EighthCharacterEightId,
+                    FirstEightWinnerId = entity.FirstEightWinnerId,
+                    SecondEightWinnerId = entity.SecondEightWinnerId,
+                    ThirdEightWinnerId = entity.ThirdEightWinnerId,
+                    FourthEightWinnerId = entity.FourthEightWinnerId,
+                    //Final Four
+                    FirstCharacterFourId = entity.FirstEightWinnerId,
+                    SecondCharacterFourId = entity.SecondEightWinnerId,
+                    ThirdCharacterFourId = entity.ThirdEightWinnerId,
+                    FourthCharacterFourId = entity.FourthEightWinnerId,
+
+                    FirstFourWinnerId = entity.FirstFourWinnerId,
+                    SecondFourWinnerId = entity.SecondFourWinnerId,
+                    //Final
+                    FinalWinnerId = entity.FinalWinnerId
+
+                };
+
+                return model;
+            }
+        }
     }
 }
