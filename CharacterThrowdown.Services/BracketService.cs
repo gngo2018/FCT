@@ -90,31 +90,31 @@ namespace CharacterThrowdown.Services
             //First 4
             if (outcomeFour < 50)
             {
-                entity.FirstFourWinnerId = model.FirstCharacterFourId;
+                entity.FirstFourWinnerId = entity.FirstCharacterFourId;
             }
             else
             {
-                entity.FirstFourWinnerId = model.SecondCharacterFourId;
+                entity.FirstFourWinnerId = entity.SecondCharacterFourId;
             }
             //Second 4
             if (outcomeFour < 50)
             {
-                entity.SecondFourWinnerId = model.ThirdCharacterFourId;
+                entity.SecondFourWinnerId = entity.ThirdCharacterFourId;
             }
             else
             {
-                entity.SecondFourWinnerId = model.FourthCharacterFourId;
+                entity.SecondFourWinnerId = entity.FourthCharacterFourId;
             }
 
             var outcomeFinal = winner.Next(0, 100);
             //Final
             if (outcomeFinal < 50)
             {
-                model.FinalWinnerId = model.FirstCharacterFinalId;
+                entity.FinalWinnerId = entity.FirstCharacterFinalId;
             }
             else
             {
-                model.FinalWinnerId = model.SecondCharacterFinalId;
+                entity.FinalWinnerId = entity .SecondCharacterFinalId;
             }
 
             using (var ctx = new ApplicationDbContext())
