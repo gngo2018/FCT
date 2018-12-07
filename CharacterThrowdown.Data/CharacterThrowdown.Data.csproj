@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201812061621579_AddBattleName.Designer.cs">
       <DependentUpon>201812061621579_AddBattleName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812071527252_Bracket.cs" />
+    <Compile Include="Migrations\201812071527252_Bracket.Designer.cs">
+      <DependentUpon>201812071527252_Bracket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812061621579_AddBattleName.resx">
       <DependentUpon>201812061621579_AddBattleName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812071527252_Bracket.resx">
+      <DependentUpon>201812071527252_Bracket.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

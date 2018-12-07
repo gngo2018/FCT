@@ -114,7 +114,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             Battle battle = db.Battles.Find(id);
             var service = CreateBattleService();
-
+            
             if (service.UpdateBattle(model))
             {
                 TempData["SaveResult"] = "Your Battle was updated.";
