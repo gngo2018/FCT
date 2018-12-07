@@ -189,8 +189,107 @@ namespace CharacterThrowdown.Services
 
                 };
 
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.FirstCharacterEightId))
+                {
+                    model.FirstCharacterEight = ctx.Characters.Single(e => e.CharacterId == entity.FirstCharacterEightId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.SecondCharacterEightId))
+                {
+                    model.SecondCharacterEight = ctx.Characters.Single(e => e.CharacterId == entity.SecondCharacterEightId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.ThirdCharacterEightId))
+                {
+                    model.ThirdCharacterEight = ctx.Characters.Single(e => e.CharacterId == entity.ThirdCharacterEightId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.FourthCharacterEightId))
+                {
+                    model.FourthCharacterEight = ctx.Characters.Single(e => e.CharacterId == entity.FourthCharacterEightId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.FifthCharacterEightId))
+                {
+                    model.FifthCharacterEight = ctx.Characters.Single(e => e.CharacterId == entity.FifthCharacterEightId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.SixthCharacterEightId))
+                {
+                    model.SixthCharacterEight = ctx.Characters.Single(e => e.CharacterId == entity.SixthCharacterEightId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.SeventhCharacterEightId))
+                {
+                    model.SeventhCharacterEight = ctx.Characters.Single(e => e.CharacterId == entity.SeventhCharacterEightId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.EighthCharacterEightId))
+                {
+                    model.EighthCharacterEight = ctx.Characters.Single(e => e.CharacterId == entity.EighthCharacterEightId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.FirstEightWinnerId))
+                {
+                    model.FirstEightWinner = ctx.Characters.Single(e => e.CharacterId == entity.FirstEightWinnerId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.SecondEightWinnerId))
+                {
+                    model.SecondEightWinner = ctx.Characters.Single(e => e.CharacterId == entity.SecondEightWinnerId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.ThirdEightWinnerId))
+                {
+                    model.ThirdEightWinner = ctx.Characters.Single(e => e.CharacterId == entity.ThirdEightWinnerId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.FourthEightWinnerId))
+                {
+                    model.FourthEightWinner = ctx.Characters.Single(e => e.CharacterId == entity.FourthEightWinnerId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.FirstFourWinnerId))
+                {
+                    model.FirstFourWinner = ctx.Characters.Single(e => e.CharacterId == entity.FirstFourWinnerId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.SecondFourWinnerId))
+                {
+                    model.SecondFourWinner = ctx.Characters.Single(e => e.CharacterId == entity.SecondFourWinnerId);
+                }
+
+                if (ctx.Characters.Any(c => c.CharacterId == model.FinalWinnerId))
+                {
+                    model.FinalWinner = ctx.Characters.Single(e => e.CharacterId == entity.FinalWinnerId);
+                }
+
                 return model;
             }
         }
+
+        public bool DeleteBracket(int bracketId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Brackets
+                        .Single(e => e.BracketId == bracketId);
+                ctx.Brackets.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public List<Character> Characters()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Characters.ToList();
+            }
+        }
+
     }
 }

@@ -10,31 +10,44 @@ namespace CharacterThrowdown.Models
 {
     public class BracketDetail
     {
+        [Display(Name = "Tounament Id")]
         public int BracketId { get; set; }
-        public int CharacterId { get; set; }
         public string Location { get; set; }
+        [Display(Name = "Tournament Name")]
         public string TournamentName { get; set; }
         //Elite Eight
+        [Display(Name= "Character 1")]
         public int FirstCharacterEightId { get; set; }
+        [Display(Name = "Character 2")]
         public int SecondCharacterEightId { get; set; }
+        [Display(Name = "Winner")]
         public int FirstEightWinnerId { get; set; }
+        [Display(Name = "Character 3")]
         public int ThirdCharacterEightId { get; set; }
+        [Display(Name = "Character 4")]
         public int FourthCharacterEightId { get; set; }
+        [Display(Name = "Winner")]
         public int SecondEightWinnerId { get; set; }
+        [Display(Name="Elite 8 Character 5")]
         public int FifthCharacterEightId { get; set; }
         public int SixthCharacterEightId { get; set; }
         public int ThirdEightWinnerId { get; set; }
+
         public int SeventhCharacterEightId { get; set; }
         public int EighthCharacterEightId { get; set; }
         public int FourthEightWinnerId { get; set; }
         //Final Four
+        [Display(Name = "")]
         public int FirstCharacterFourId { get; set; }
         public int SecondCharacterFourId { get; set; }
         public int FirstFourWinnerId { get; set; }
+        [Display(Name = "Character 2")]
         public int ThirdCharacterFourId { get; set; }
         public int FourthCharacterFourId { get; set; }
         public int SecondFourWinnerId { get; set; }
         //Final
+        [Display(Name = "Champion")]
+
         public int FinalWinnerId { get; set; }
 
         //Virtual
