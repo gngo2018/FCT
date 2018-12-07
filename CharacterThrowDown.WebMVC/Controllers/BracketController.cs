@@ -22,6 +22,17 @@ namespace CharacterThrowDown.WebMVC.Controllers
         //GET: Create Bracket
         public ActionResult Create()
         {
+            var service = new BracketService();
+            var characterList = new SelectList(service.Characters(), "CharacterId", "CharacterName");
+            ViewBag.FirstCharacterEightId = characterList;
+            ViewBag.SecondCharacterEightId = characterList;
+            ViewBag.ThirdCharacterEightId = characterList;
+            ViewBag.FourthCharacterEightId = characterList;
+            ViewBag.FifthCharacterEightId = characterList;
+            ViewBag.SixthCharacterEightId = characterList;
+            ViewBag.SeventhCharacterEightId = characterList;
+            ViewBag.EighthCharacterEightId = characterList;
+
             return View();
         }
 
@@ -42,10 +53,21 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             ModelState.AddModelError("", "Battle was unable to be created, please try again");
 
+            var svc = new BracketService();
+            ViewBag.FirstCharacterEightId = new SelectList(svc.Characters(), "FirstCharacterEightId", "CharacterName", model.FirstCharacterEightId);
+            ViewBag.SecondCharacterEightId = new SelectList(svc.Characters(), "SecondCharacterEightId", "CharacterName", model.SecondCharacterEightId);
+            ViewBag.ThirdCharacterEightId = new SelectList(svc.Characters(), "ThirdCharacterEightId", "CharacterName", model.ThirdCharacterEightId);
+            ViewBag.FourthCharacterEightId = new SelectList(svc.Characters(), "FourthCharacterEightId", "CharacterName", model.FourthCharacterEightId);
+            ViewBag.FifthCharacterEightId = new SelectList(svc.Characters(), "FifthCharacterEightId", "CharacterName", model.FifthCharacterEightId);
+            ViewBag.SixthCharacterEightId = new SelectList(svc.Characters(), "SixthCharacterEightId", "CharacterName", model.SixthCharacterEightId);
+            ViewBag.SeventhCharacterEightId = new SelectList(svc.Characters(), "SeventhCharacterEightId", "CharacterName", model.SeventhCharacterEightId);
+            ViewBag.EighthCharacterEightId = new SelectList(svc.Characters(), "EighthCharacterEightId", "CharacterName", model.EighthCharacterEightId);
+
+
             return View(model);
         }
 
-        //POST: Battle Details
+        //POST: Bracket Details
         public ActionResult Details(int id)
         {
             var svc = new BracketService();
@@ -53,6 +75,33 @@ namespace CharacterThrowDown.WebMVC.Controllers
             if (!ModelState.IsValid) return View(model);
 
             return View(model);
+        }
+
+        //GET: Bracket Edit
+
+        //POST: Bracket Edit
+
+        //GET: Battle Delete
+        public ActionResult Delete(int id)
+        {
+            var svc = new BracketService();
+            var model = svc.GetBracketById(id);
+
+            return View(model);
+        }
+
+        //POST: Bracket Delete
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = new BracketService();
+
+            service.DeleteBracket(id);
+
+            TempData["SaveResult"] = "Your Character was deleted. Shame... they had no choice.";
+            return RedirectToAction("Index");
         }
     }
 }

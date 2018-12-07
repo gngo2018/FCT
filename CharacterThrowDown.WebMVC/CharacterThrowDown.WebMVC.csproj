@@ -286,6 +286,7 @@
     <Content Include="Views\Bracket\Index.cshtml" />
     <Content Include="Views\Bracket\Create.cshtml" />
     <Content Include="Views\Bracket\Details.cshtml" />
+    <Content Include="Views\Bracket\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
