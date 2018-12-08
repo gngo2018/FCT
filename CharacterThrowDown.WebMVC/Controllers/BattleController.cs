@@ -90,6 +90,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
                 new BattleEdit
                 {
                     BattleId = detail.BattleId,
+                    BattleName = detail.BattleName,
                     Location = detail.Location,
                     FirstCharacterId = detail.FirstCharacterId,
                     SecondCharacterId = detail.SecondCharacterId,
@@ -118,7 +119,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
             
             if (service.UpdateBattle(model))
             {
-                TempData["SaveResult"] = "Your Battle was updated.";
+                TempData["SaveResult"] = "Your Battle was updated! May the odds ever be in your favor.";
                 return RedirectToAction("Index");
             }
 
@@ -153,16 +154,16 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             service.DeleteBattle(id);
 
-            TempData["SaveResult"] = "Your Character was deleted. Shame... they had no choice.";
+            TempData["SaveResult"] = "Your Battle was deleted. Shame... would've been a great bout.";
             return RedirectToAction("Index");
         }
 
-        private CharacterService CreateCharacterService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CharacterService(userId);
-            return service;
-        }
+        //private CharacterService CreateCharacterService()
+        //{
+        //    var userId = Guid.Parse(User.Identity.GetUserId());
+        //    var service = new CharacterService(userId);
+        //    return service;
+        //}
 
         private BattleService CreateBattleService()
         {

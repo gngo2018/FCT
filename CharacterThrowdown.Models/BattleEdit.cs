@@ -10,6 +10,7 @@ namespace CharacterThrowdown.Models
     public class BattleEdit
     {
         public int BattleId { get; set; }
+        public string BattleName { get; set; }
         public string Location { get; set; }
         public int FirstCharacterId { get; set; }
         public int SecondCharacterId { get; set; }
