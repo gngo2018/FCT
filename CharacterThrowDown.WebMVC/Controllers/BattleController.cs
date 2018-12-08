@@ -94,7 +94,8 @@ namespace CharacterThrowDown.WebMVC.Controllers
                     FirstCharacterId = detail.FirstCharacterId,
                     SecondCharacterId = detail.SecondCharacterId,
                     FirstItemId = detail.FirstItemId,
-                    SecondItemId = detail.SecondItemId
+                    SecondItemId = detail.SecondItemId,
+                    WinnerCharacterId = detail.WinnerCharacterId
                 };
             return View(model);
         }
@@ -123,6 +124,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             ViewBag.FirstCharacterId = new SelectList(db.Characters, "FirstCharacterId", "CharacterName", model.FirstCharacterId);
             ViewBag.SecondCharacterId = new SelectList(db.Characters, "SecondCharacterId", "CharacterName", model.SecondCharacterId);
+            ViewBag.WinnerCharacterId = new SelectList(db.Characters, "WinnerCharacterId", "CharacterName", model.WinnerCharacterId);
             ViewBag.FirstItemId = new SelectList(db.Items, "FirstItemId", "ItemName", model.FirstItemId);
             ViewBag.SecondItemId = new SelectList(db.Items, "SecondItemId", "ItemName", model.SecondItemId);
 

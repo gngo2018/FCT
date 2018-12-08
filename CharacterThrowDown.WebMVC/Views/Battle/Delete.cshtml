@@ -27,6 +27,8 @@
             @Html.DisplayFor(model => model.Location)
         </dd>
 
+        <br />
+
         <dt>
             @Html.DisplayNameFor(model => model.FirstCharacterId)
         </dt>
@@ -34,6 +36,16 @@
         <dd>
             @Html.DisplayFor(model => model.FirstCharacterId)
         </dd>
+
+        <dt>
+            @Html.DisplayName("Character 1")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstCharacter.CharacterName)
+        </dd>
+
+        <br />
 
         <dt>
             @Html.DisplayNameFor(model => model.SecondCharacterId)
@@ -44,11 +56,29 @@
         </dd>
 
         <dt>
+            @Html.DisplayName("Character 2")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondCharacter.CharacterName)
+        </dd>
+
+        <br />
+
+        <dt>
             @Html.DisplayNameFor(model => model.WinnerCharacterId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.WinnerCharacterId)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Winner")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WinnerCharacter.CharacterName)
         </dd>
 
     </dl>

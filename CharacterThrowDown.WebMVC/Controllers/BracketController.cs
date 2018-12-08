@@ -1,5 +1,7 @@
-﻿using CharacterThrowdown.Models;
+﻿using CharacterThrowdown.Data;
+using CharacterThrowdown.Models;
 using CharacterThrowdown.Services;
+using CharacterThrowDown.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -78,9 +80,76 @@ namespace CharacterThrowDown.WebMVC.Controllers
         }
 
         //GET: Bracket Edit
+        public ActionResult Edit(int id)
+        {
+            var db = new BracketService();
+            var characterList = new SelectList(db.Characters(), "CharacterId", "CharacterName");
+            ViewBag.FirstCharacterId = characterList;
+            ViewBag.SecondCharacterId = characterList;
+            ViewBag.ThirdCharacterId = characterList;
+            ViewBag.FourthCharacterId = characterList;
+            ViewBag.FifthCharacterId = characterList;
+            ViewBag.SixthCharacterId = characterList;
+            ViewBag.SeventhCharacterId = characterList;
+            ViewBag.EighthCharacterId = characterList;
+
+
+            var service = new BracketService();
+            var detail = service.GetBracketById(id);
+            var model =
+                new BracketEdit
+                {
+                    BracketId = detail.BracketId,
+                    Location = detail.Location,
+                    TournamentName = detail.TournamentName,
+                    FirstCharacterId = detail.FirstCharacterEightId,
+                    SecondCharacterId = detail.SecondCharacterEightId,
+                    ThirdCharacterId = detail.ThirdCharacterEightId,
+                    FourthCharacterId = detail.FourthCharacterEightId,
+                    FifthCharacterId = detail.FifthCharacterEightId,
+                    SixthCharacterId = detail.SixthCharacterEightId,
+                    SeventhCharacterId = detail.SeventhCharacterEightId,
+                    EighthCharacterId = detail.EighthCharacterEightId,
+
+                };
+            return View(model);
+        }
 
         //POST: Bracket Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, BracketEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
 
+            if (model.BracketId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var svc = new BracketService();
+            
+            //Bracket bracket = svc.Brackets().Find(id);
+
+            if (svc.UpdateBracket(model))
+            {
+                TempData["SaveResult"] = "Your Battle was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.FirstCharacterId = new SelectList(svc.Characters(), "FirstCharacterId", "CharacterName", model.FirstCharacterId);
+            ViewBag.SecondCharacterId = new SelectList(svc.Characters(), "SecondCharacterId", "CharacterName", model.SecondCharacterId);
+            ViewBag.ThirdCharacterId = new SelectList(svc.Characters(), "ThirdCharacterId", "CharacterName", model.ThirdCharacterId);
+            ViewBag.FourthCharacterId = new SelectList(svc.Characters(), "FourthCharacterId", "CharacterName", model.FourthCharacterId);
+            ViewBag.FifthCharacterId = new SelectList(svc.Characters(), "FifthCharacterId", "CharacterName", model.FifthCharacterId);
+            ViewBag.SixthCharacterId = new SelectList(svc.Characters(), "SixthCharacterId", "CharacterName", model.SixthCharacterId);
+            ViewBag.SeventhCharacterId = new SelectList(svc.Characters(), "SeventhCharacterId", "CharacterName", model.SeventhCharacterId);
+            ViewBag.EighthCharacterId = new SelectList(svc.Characters(), "EighthCharacterId", "CharacterName", model.EighthCharacterId);
+
+            ModelState.AddModelError("", "Your Battle could not be updated");
+            return View(model);
+
+        }
         //GET: Battle Delete
         public ActionResult Delete(int id)
         {

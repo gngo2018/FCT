@@ -162,6 +162,7 @@ namespace CharacterThrowdown.Services
                 entity.SecondCharacterId = model.SecondCharacterId;
                 entity.FirstItemId = model.FirstItemId;
                 entity.SecondItemId = model.SecondItemId;
+                entity.WinnerCharacterId = model.WinnerCharacterId;
 
                 return ctx.SaveChanges() == 1;
             }

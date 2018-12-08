@@ -269,6 +269,30 @@ namespace CharacterThrowdown.Services
             }
         }
 
+        public bool UpdateBracket(BracketEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Brackets
+                        .Single(e => e.BracketId == model.BracketId);
+
+                entity.Location = model.Location;
+                entity.FirstCharacterEightId = model.FirstCharacterId;
+                entity.SecondCharacterEightId = model.SecondCharacterId;
+                entity.ThirdCharacterEightId = model.ThirdCharacterId;
+                entity.FourthCharacterEightId = model.FourthCharacterId;
+                entity.FifthCharacterEightId = model.FifthCharacterId;
+                entity.SixthCharacterEightId = model.SixthCharacterId;
+                entity.SeventhCharacterEightId = model.SeventhCharacterId;
+                entity.EighthCharacterEightId = model.EighthCharacterId;
+
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
         public bool DeleteBracket(int bracketId)
         {
             using (var ctx = new ApplicationDbContext())
@@ -288,6 +312,14 @@ namespace CharacterThrowdown.Services
             using (var ctx = new ApplicationDbContext())
             {
                 return ctx.Characters.ToList();
+            }
+        }
+
+        public List<Bracket> Brackets()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Brackets.ToList();
             }
         }
 
