@@ -150,6 +150,18 @@ namespace CharacterThrowdown.Services
 
         public bool UpdateBattle(BattleEdit model)
         {
+            Random winner = new Random();
+            var outcome = winner.Next(0, 100);
+            if (outcome < 50)
+            {
+                model.WinnerCharacterId = model.FirstCharacterId;
+            }
+
+            else
+            {
+                model.WinnerCharacterId = model.SecondCharacterId;
+            }
+
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
@@ -157,11 +169,13 @@ namespace CharacterThrowdown.Services
                         .Battles
                         .Single(e => e.BattleId == model.BattleId && e.OwnerId == _userId);
 
+                entity.BattleName = model.BattleName;
                 entity.Location = model.Location;
                 entity.FirstCharacterId = model.FirstCharacterId;
                 entity.SecondCharacterId = model.SecondCharacterId;
                 entity.FirstItemId = model.FirstItemId;
                 entity.SecondItemId = model.SecondItemId;
+                entity.WinnerCharacterId = model.WinnerCharacterId;
 
                 return ctx.SaveChanges() == 1;
             }

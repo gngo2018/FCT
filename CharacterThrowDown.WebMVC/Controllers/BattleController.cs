@@ -90,11 +90,13 @@ namespace CharacterThrowDown.WebMVC.Controllers
                 new BattleEdit
                 {
                     BattleId = detail.BattleId,
+                    BattleName = detail.BattleName,
                     Location = detail.Location,
                     FirstCharacterId = detail.FirstCharacterId,
                     SecondCharacterId = detail.SecondCharacterId,
                     FirstItemId = detail.FirstItemId,
-                    SecondItemId = detail.SecondItemId
+                    SecondItemId = detail.SecondItemId,
+                    WinnerCharacterId = detail.WinnerCharacterId
                 };
             return View(model);
         }
@@ -117,12 +119,13 @@ namespace CharacterThrowDown.WebMVC.Controllers
             
             if (service.UpdateBattle(model))
             {
-                TempData["SaveResult"] = "Your Battle was updated.";
+                TempData["SaveResult"] = "Your Battle was updated! May the odds ever be in your favor.";
                 return RedirectToAction("Index");
             }
 
             ViewBag.FirstCharacterId = new SelectList(db.Characters, "FirstCharacterId", "CharacterName", model.FirstCharacterId);
             ViewBag.SecondCharacterId = new SelectList(db.Characters, "SecondCharacterId", "CharacterName", model.SecondCharacterId);
+            ViewBag.WinnerCharacterId = new SelectList(db.Characters, "WinnerCharacterId", "CharacterName", model.WinnerCharacterId);
             ViewBag.FirstItemId = new SelectList(db.Items, "FirstItemId", "ItemName", model.FirstItemId);
             ViewBag.SecondItemId = new SelectList(db.Items, "SecondItemId", "ItemName", model.SecondItemId);
 
@@ -151,16 +154,16 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             service.DeleteBattle(id);
 
-            TempData["SaveResult"] = "Your Character was deleted. Shame... they had no choice.";
+            TempData["SaveResult"] = "Your Battle was deleted. Shame... would've been a great bout.";
             return RedirectToAction("Index");
         }
 
-        private CharacterService CreateCharacterService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CharacterService(userId);
-            return service;
-        }
+        //private CharacterService CreateCharacterService()
+        //{
+        //    var userId = Guid.Parse(User.Identity.GetUserId());
+        //    var service = new CharacterService(userId);
+        //    return service;
+        //}
 
         private BattleService CreateBattleService()
         {
