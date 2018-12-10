@@ -20,6 +20,13 @@ namespace CharacterThrowdown.Models
         public int SixthCharacterId { get; set; }
         public int SeventhCharacterId { get; set; }
         public int EighthCharacterId { get; set; }
+        public int FirstEightWinnerId { get; set; }
+        public int SecondEightWinnerId { get; set; }
+        public int ThirdEightWinnerId { get; set; }
+        public int FourthEightWinnerId { get; set; }
+        public int FirstFourWinnerId { get; set; }
+        public int SecondFourWinnerId { get; set; }
+        public int FinalWinnerId { get; set; }
 
         public virtual Character FirstCharacter { get; set; }
         public virtual Character SecondCharacter { get; set; }
@@ -29,6 +36,18 @@ namespace CharacterThrowdown.Models
         public virtual Character SixthCharacter { get; set; }
         public virtual Character SeventhCharacter { get; set; }
         public virtual Character EighthCharacter { get; set; }
+        public virtual Character FirstEightWinner { get; set; }
+        public virtual Character SecondEightWinner { get; set; }
+        public virtual Character ThirdEightWinner { get; set; }
+        public virtual Character FourthEightWinner { get; set; }
+        public virtual Character FirstFourWinner { get; set; }
+        public virtual Character SecondFourWinner { get; set; }
+        public virtual Character FinalWinner { get; set; }
+
+
+
+
+
 
     }
 }

@@ -27,8 +27,6 @@ namespace CharacterThrowDown.WebMVC.Controllers
         //GET: Create Character
         public ActionResult Create()
         {
-            //ViewBag.ItemId = new SelectList(db.Items, "ItemId", "ItemName");
-
             return View();
         }
 
@@ -37,7 +35,6 @@ namespace CharacterThrowDown.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CharacterCreate model)
         {
-
             if (!ModelState.IsValid) return View(model);
             
             var service = CreateCharacterService();
@@ -49,7 +46,6 @@ namespace CharacterThrowDown.WebMVC.Controllers
             };
 
             ModelState.AddModelError("", "Character was unable to be created, please try again");
-
 
             return View(model);
         }
@@ -66,8 +62,6 @@ namespace CharacterThrowDown.WebMVC.Controllers
         //GET: Character Edit
         public ActionResult Edit(int id)
         {
-            //var itemList = new SelectList(db.Items, "ItemId", "ItemName");
-            //ViewBag.ItemId = itemList;
             var service = CreateCharacterService();
             var detail = service.GetCharacterById(id);
 
@@ -77,9 +71,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
                     CharacterId = detail.CharacterId,
                     CharacterName = detail.CharacterName,
                     CharacterUniverse = detail.CharacterUniverse,
-                    CharacterAbility = detail.CharacterAbility,
-                    //ItemId = detail.ItemId
-                    
+                    CharacterAbility = detail.CharacterAbility,              
                 };
 
             return View(model);
@@ -90,6 +82,8 @@ namespace CharacterThrowDown.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, CharacterEdit model)
         {
+            var service = CreateCharacterService();
+
             if (!ModelState.IsValid) return View(model);
 
             if(model.CharacterId != id)
@@ -98,22 +92,11 @@ namespace CharacterThrowDown.WebMVC.Controllers
                 return View(model);
             }
            
-            var service = CreateCharacterService();
-           // Character character = db.Characters.Find(id);
-
-           // var list = new List<Item>();
-           // foreach(var c in db.Characters)
-           // {
-           //     list.Add(c.Item);
-           // }
-
             if (service.UpdateCharacter(model))
             {
                 TempData["SaveResult"] = "Your Character was updated.";
                 return RedirectToAction("Index");
             }
-
-            //ViewBag.ItemId = new SelectList(db.Items, "ItemId", "ItemName", character.ItemId);
 
             ModelState.AddModelError("", "Your Character could not be updated");
             return View(model);
@@ -148,6 +131,5 @@ namespace CharacterThrowDown.WebMVC.Controllers
             var service = new CharacterService(userId);
             return service;
         }
-
     }
 }

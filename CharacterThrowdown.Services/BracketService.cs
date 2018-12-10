@@ -271,6 +271,45 @@ namespace CharacterThrowdown.Services
 
         public bool UpdateBracket(BracketEdit model)
         {
+            //First 8
+            Random winner = new Random();
+            var outcome = winner.Next(0, 100);
+            if (outcome < 50)
+            {
+                model.FirstEightWinnerId = model.FirstCharacterId;
+            }
+            else
+            {
+                model.FirstEightWinnerId = model.SecondCharacterId;
+            }
+            //Second 8
+            if (outcome < 50)
+            {
+                model.SecondEightWinnerId = model.ThirdCharacterId;
+            }
+            else
+            {
+                model.SecondEightWinnerId = model.FourthCharacterId;
+            }
+            //Third 8
+            if (outcome < 50)
+            {
+                model.ThirdEightWinnerId = model.FifthCharacterId;
+            }
+            else
+            {
+                model.ThirdEightWinnerId = model.SixthCharacterId;
+            }
+            //Fourth 8
+            if (outcome < 50)
+            {
+                model.FourthEightWinnerId = model.SeventhCharacterId;
+            }
+            else
+            {
+                model.FourthEightWinnerId = model.EighthCharacterId;
+            }
+
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
@@ -287,10 +326,49 @@ namespace CharacterThrowdown.Services
                 entity.SixthCharacterEightId = model.SixthCharacterId;
                 entity.SeventhCharacterEightId = model.SeventhCharacterId;
                 entity.EighthCharacterEightId = model.EighthCharacterId;
+                entity.FirstEightWinnerId = model.FirstEightWinnerId;
+                entity.SecondEightWinnerId = model.SecondEightWinnerId;
+                entity.ThirdEightWinnerId = model.ThirdEightWinnerId;
+                entity.FourthEightWinnerId = model.FourthEightWinnerId;
+                entity.FirstFourWinnerId = model.FirstFourWinnerId;
+                entity.SecondFourWinnerId = model.SecondFourWinnerId;
+                entity.FinalWinnerId = model.FinalWinnerId;
 
+                Random newRandom = new Random();
+                var outcomeFour = newRandom.Next(0, 100);
+                //First 4
+                if (outcomeFour < 50)
+                {
+                    entity.FirstFourWinnerId = entity.FirstEightWinnerId;
+                }
+                else
+                {
+                    entity.FirstFourWinnerId = entity.SecondEightWinnerId;
+                }
+                //Second 4
+                if (outcomeFour < 50)
+                {
+                    entity.SecondFourWinnerId = entity.ThirdEightWinnerId;
+                }
+                else
+                {
+                    entity.SecondFourWinnerId = entity.FourthEightWinnerId;
+                }
+                Random finalRandom = new Random();
+                var outcomeFinal = finalRandom.Next(0, 100);
+                //Final
+                if (outcomeFinal < 50)
+                {
+                    entity.FinalWinnerId = entity.FirstFourWinnerId;
+                }
+                else
+                {
+                    entity.FinalWinnerId = entity.SecondFourWinnerId;
+                }
 
                 return ctx.SaveChanges() == 1;
             }
+
         }
 
         public bool DeleteBracket(int bracketId)

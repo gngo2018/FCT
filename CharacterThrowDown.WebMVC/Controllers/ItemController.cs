@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace CharacterThrowDown.WebMVC.Controllers
 {
+    [Authorize]
     public class ItemController : Controller
     {
         // GET: Item

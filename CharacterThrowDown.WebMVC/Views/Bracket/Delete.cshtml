@@ -8,33 +8,40 @@
 
 <div>
     <h4>Are you sure you want to delete this bracket?</h4>
+    <br />
+    <div class="row">
+        <dl class="dl-horizontal col-lg-4">
+            <dt>
+                @Html.DisplayNameFor(model => model.BracketId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BracketId)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-lg-4">
+            <dt>
+                @Html.DisplayNameFor(model => model.TournamentName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TournamentName)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-lg-4">
+            <dt>
+                @Html.DisplayNameFor(model => model.Location)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Location)
+            </dd>
+        </dl>
+
+    </div>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.BracketId)
-        </dt>
+    <dl class="dl-horizontal col-lg-4">
 
-        <dd>
-            @Html.DisplayFor(model => model.BracketId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TournamentName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TournamentName)
-        </dd>
-
-        <br />
         <dt>
             @Html.DisplayName("Round:")
         </dt>
@@ -43,7 +50,7 @@
         </dd>
         <br />
         <dt>
-            @Html.DisplayNameFor(model => model.FirstCharacterEightId)
+            @Html.DisplayName("Elite Eight Contestant 1")
         </dt>
 
         <dd>
@@ -51,7 +58,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Elite Eight Contestant 1")
+            @Html.DisplayName("Elite Eight Contestant 2")
         </dt>
 
         <dd>
@@ -59,7 +66,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Elite Eight Contestant 2")
+            @Html.DisplayName("Winner")
         </dt>
 
         <dd>
@@ -146,13 +153,17 @@
         </dd>
 
         <br />
+    </dl>
 
+    <dl class="dl-horizontal col-lg-4">
         <dt>
             @Html.DisplayName("Round:")
         </dt>
         <dd>
             @Html.DisplayName("Final Four")
         </dd>
+        <br />
+        <br />
         <br />
         <dt>
             @Html.DisplayName("Final Four Contestant 1")
@@ -179,7 +190,10 @@
         </dd>
 
         <br />
-
+        <br />
+        <br />
+        <br />
+        <br />
         <dt>
             @Html.DisplayName("Final Four Contestant 3")
         </dt>
@@ -205,13 +219,20 @@
         </dd>
 
         <br />
-
+    </dl>
+    <dl class="dl-horizontal col-lg-4">
         <dt>
             @Html.DisplayName("Round:")
         </dt>
         <dd>
             @Html.DisplayName("Final")
         </dd>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <dt>
             @Html.DisplayName("Final Character 1")
@@ -238,6 +259,32 @@
 
     </dl>
 </div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
 @using (Html.BeginForm())
 {

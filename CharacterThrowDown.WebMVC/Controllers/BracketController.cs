@@ -43,19 +43,18 @@ namespace CharacterThrowDown.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(BracketCreate model)
         {
+            var svc = new BracketService();
+
             if (!ModelState.IsValid) return View(model);
 
-            var service = new BracketService();
-
-            if (service.CreateBracket(model))
+            if (svc.CreateBracket(model))
             {
-                TempData["SaveResult"] = "Your Battle is set! May the best character win!";
+                TempData["SaveResult"] = "Your Bracket is set! May the best character win!";
                 return RedirectToAction("Index");
             };
 
-            ModelState.AddModelError("", "Battle was unable to be created, please try again");
+            ModelState.AddModelError("", "Bracket was unable to be created, please try again");
 
-            var svc = new BracketService();
             ViewBag.FirstCharacterEightId = new SelectList(svc.Characters(), "FirstCharacterEightId", "CharacterName", model.FirstCharacterEightId);
             ViewBag.SecondCharacterEightId = new SelectList(svc.Characters(), "SecondCharacterEightId", "CharacterName", model.SecondCharacterEightId);
             ViewBag.ThirdCharacterEightId = new SelectList(svc.Characters(), "ThirdCharacterEightId", "CharacterName", model.ThirdCharacterEightId);
@@ -83,6 +82,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
         public ActionResult Edit(int id)
         {
             var db = new BracketService();
+            var detail = db.GetBracketById(id);
             var characterList = new SelectList(db.Characters(), "CharacterId", "CharacterName");
             ViewBag.FirstCharacterId = characterList;
             ViewBag.SecondCharacterId = characterList;
@@ -93,9 +93,6 @@ namespace CharacterThrowDown.WebMVC.Controllers
             ViewBag.SeventhCharacterId = characterList;
             ViewBag.EighthCharacterId = characterList;
 
-
-            var service = new BracketService();
-            var detail = service.GetBracketById(id);
             var model =
                 new BracketEdit
                 {
@@ -120,20 +117,19 @@ namespace CharacterThrowDown.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, BracketEdit model)
         {
+            var svc = new BracketService();
+
             if (!ModelState.IsValid) return View(model);
 
             if (model.BracketId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
-            }
-            var svc = new BracketService();
-            
-            //Bracket bracket = svc.Brackets().Find(id);
+            }            
 
             if (svc.UpdateBracket(model))
             {
-                TempData["SaveResult"] = "Your Battle was updated.";
+                TempData["SaveResult"] = "Your Bracket was updated.";
                 return RedirectToAction("Index");
             }
 
@@ -172,5 +168,6 @@ namespace CharacterThrowDown.WebMVC.Controllers
             TempData["SaveResult"] = "Your Character was deleted. Shame... they had no choice.";
             return RedirectToAction("Index");
         }
+
     }
 }
