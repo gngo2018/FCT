@@ -129,7 +129,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
             }
             var svc = new BracketService();
             
-            //Bracket bracket = svc.Brackets().Find(id);
+            //Bracket bracket = db.Brackets.Find(id);
 
             if (svc.UpdateBracket(model))
             {
@@ -172,5 +172,6 @@ namespace CharacterThrowDown.WebMVC.Controllers
             TempData["SaveResult"] = "Your Character was deleted. Shame... they had no choice.";
             return RedirectToAction("Index");
         }
+
     }
 }
