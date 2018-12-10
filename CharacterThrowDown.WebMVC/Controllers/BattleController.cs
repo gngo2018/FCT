@@ -106,6 +106,9 @@ namespace CharacterThrowDown.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit (int id, BattleEdit model)
         {
+            //Battle battle = db.Battles.Find(id);
+            var service = CreateBattleService();
+
             if (!ModelState.IsValid) return View(model);
 
             if (model.BattleId != id)
@@ -114,8 +117,6 @@ namespace CharacterThrowDown.WebMVC.Controllers
                 return View(model);
             }
 
-            Battle battle = db.Battles.Find(id);
-            var service = CreateBattleService();
             
             if (service.UpdateBattle(model))
             {
@@ -157,13 +158,6 @@ namespace CharacterThrowDown.WebMVC.Controllers
             TempData["SaveResult"] = "Your Battle was deleted. Shame... would've been a great bout.";
             return RedirectToAction("Index");
         }
-
-        //private CharacterService CreateCharacterService()
-        //{
-        //    var userId = Guid.Parse(User.Identity.GetUserId());
-        //    var service = new CharacterService(userId);
-        //    return service;
-        //}
 
         private BattleService CreateBattleService()
         {

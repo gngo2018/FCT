@@ -129,21 +129,6 @@ namespace CharacterThrowdown.Services
                     model.WinnerCharacter = ctx.Characters.Single(e => e.CharacterId == entity.WinnerCharacterId);
                 }
 
-                //Random winner = new Random();
-                //var outcome = winner.Next(0, 100);
-                //if (outcome < 50)
-                //{
-                //    model.WinnerCharacterId = model.FirstCharacterId;
-                //    //ctx.Battles.Add(entity);
-                //}
-
-                //else
-                //{
-                //    model.WinnerCharacterId = model.SecondCharacterId;
-                //    //ctx.Battles.Add(entity);
-                //}
-
-
                 return model;
             }
         }
