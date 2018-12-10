@@ -49,11 +49,11 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             if (svc.CreateBracket(model))
             {
-                TempData["SaveResult"] = "Your Battle is set! May the best character win!";
+                TempData["SaveResult"] = "Your Bracket is set! May the best character win!";
                 return RedirectToAction("Index");
             };
 
-            ModelState.AddModelError("", "Battle was unable to be created, please try again");
+            ModelState.AddModelError("", "Bracket was unable to be created, please try again");
 
             ViewBag.FirstCharacterEightId = new SelectList(svc.Characters(), "FirstCharacterEightId", "CharacterName", model.FirstCharacterEightId);
             ViewBag.SecondCharacterEightId = new SelectList(svc.Characters(), "SecondCharacterEightId", "CharacterName", model.SecondCharacterEightId);
@@ -92,7 +92,6 @@ namespace CharacterThrowDown.WebMVC.Controllers
             ViewBag.SixthCharacterId = characterList;
             ViewBag.SeventhCharacterId = characterList;
             ViewBag.EighthCharacterId = characterList;
-
 
             var model =
                 new BracketEdit

@@ -179,5 +179,21 @@ namespace CharacterThrowdown.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public List<Character> Characters()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Characters.ToList();
+            }
+        }
+
+        public List<Item> Items()
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                return ctx.Items.ToList();
+            }
+        }
     }
 }

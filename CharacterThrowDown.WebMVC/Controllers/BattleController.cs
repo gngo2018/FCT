@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace CharacterThrowDown.WebMVC.Controllers
 {
+    [Authorize]
     public class BattleController : Controller
     {
         // GET: Battle
@@ -19,20 +20,19 @@ namespace CharacterThrowDown.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new BattleService(userId);
             var model = service.GetBattles();
-            
-            //var characters = db.Characters.Include(c => c. )
-
+        
             return View(model);
         }
 
         //GET: Create Battle
         public ActionResult Create()
         {
-            var characterList = new SelectList(db.Characters, "CharacterId", "CharacterName");
+            var svc = CreateBattleService();
+            var characterList = new SelectList(svc.Characters(), "CharacterId", "CharacterName");
             ViewBag.FirstCharacterId = characterList;
             ViewBag.SecondCharacterId = characterList;
 
-            var itemList = new SelectList(db.Items, "ItemId", "ItemName");
+            var itemList = new SelectList(svc.Items(), "ItemId", "ItemName");
             ViewBag.FirstItemId = itemList;
             ViewBag.SecondItemId = itemList;
             return View();
@@ -45,9 +45,9 @@ namespace CharacterThrowDown.WebMVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            var service = CreateBattleService();
+            var svc = CreateBattleService();
 
-            if (service.CreateBattle(model))
+            if (svc.CreateBattle(model))
             {
                 TempData["SaveResult"] = "Your Battle is set! May the best character win!";
                 return RedirectToAction("Index");
@@ -55,10 +55,10 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             ModelState.AddModelError("", "Battle was unable to be created, please try again");
 
-            ViewBag.FirstCharacterId = new SelectList(db.Characters, "FirstCharacterId", "CharacterName", model.FirstCharacterId);
-            ViewBag.SecondCharacterId = new SelectList(db.Characters, "SecondCharacterId", "CharacterName", model.SecondCharacterId);
-            ViewBag.FirstItemId = new SelectList(db.Items, "FirstItemId", "ItemName", model.FirstItemId);
-            ViewBag.SecondItemId = new SelectList(db.Items, "SecondItemId", "ItemName", model.SecondItemId);
+            ViewBag.FirstCharacterId = new SelectList(svc.Characters(), "FirstCharacterId", "CharacterName", model.FirstCharacterId);
+            ViewBag.SecondCharacterId = new SelectList(svc.Characters(), "SecondCharacterId", "CharacterName", model.SecondCharacterId);
+            ViewBag.FirstItemId = new SelectList(svc.Items(), "FirstItemId", "ItemName", model.FirstItemId);
+            ViewBag.SecondItemId = new SelectList(svc.Items(), "SecondItemId", "ItemName", model.SecondItemId);
 
             return View(model);
         }
@@ -76,16 +76,16 @@ namespace CharacterThrowDown.WebMVC.Controllers
         //GET: Battle Edit
         public ActionResult Edit (int id)
         {
-            var characterList = new SelectList(db.Characters, "CharacterId", "CharacterName");
+            var svc = CreateBattleService();
+            var characterList = new SelectList(svc.Characters(), "CharacterId", "CharacterName");
             ViewBag.FirstCharacterId = characterList;
             ViewBag.SecondCharacterId = characterList;
 
-            var itemList = new SelectList(db.Items, "ItemId", "ItemName");
+            var itemList = new SelectList(svc.Items(), "ItemId", "ItemName");
             ViewBag.FirstItemId = itemList;
             ViewBag.SecondItemId = itemList;
 
-            var service = CreateBattleService();
-            var detail = service.GetBattleById(id);
+            var detail = svc.GetBattleById(id);
             var model =
                 new BattleEdit
                 {
@@ -106,8 +106,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit (int id, BattleEdit model)
         {
-            //Battle battle = db.Battles.Find(id);
-            var service = CreateBattleService();
+            var svc = CreateBattleService();
 
             if (!ModelState.IsValid) return View(model);
 
@@ -118,17 +117,17 @@ namespace CharacterThrowDown.WebMVC.Controllers
             }
 
             
-            if (service.UpdateBattle(model))
+            if (svc.UpdateBattle(model))
             {
                 TempData["SaveResult"] = "Your Battle was updated! May the odds ever be in your favor.";
                 return RedirectToAction("Index");
             }
 
-            ViewBag.FirstCharacterId = new SelectList(db.Characters, "FirstCharacterId", "CharacterName", model.FirstCharacterId);
-            ViewBag.SecondCharacterId = new SelectList(db.Characters, "SecondCharacterId", "CharacterName", model.SecondCharacterId);
-            ViewBag.WinnerCharacterId = new SelectList(db.Characters, "WinnerCharacterId", "CharacterName", model.WinnerCharacterId);
-            ViewBag.FirstItemId = new SelectList(db.Items, "FirstItemId", "ItemName", model.FirstItemId);
-            ViewBag.SecondItemId = new SelectList(db.Items, "SecondItemId", "ItemName", model.SecondItemId);
+            ViewBag.FirstCharacterId = new SelectList(svc.Characters(), "FirstCharacterId", "CharacterName", model.FirstCharacterId);
+            ViewBag.SecondCharacterId = new SelectList(svc.Characters(), "SecondCharacterId", "CharacterName", model.SecondCharacterId);
+            ViewBag.WinnerCharacterId = new SelectList(svc.Characters(), "WinnerCharacterId", "CharacterName", model.WinnerCharacterId);
+            ViewBag.FirstItemId = new SelectList(svc.Items(), "FirstItemId", "ItemName", model.FirstItemId);
+            ViewBag.SecondItemId = new SelectList(svc.Items(), "SecondItemId", "ItemName", model.SecondItemId);
 
             ModelState.AddModelError("", "Your Battle could not be updated");
             return View(model);
@@ -165,7 +164,5 @@ namespace CharacterThrowDown.WebMVC.Controllers
             var service = new BattleService(userId);
             return service;
         }
-
-        private ApplicationDbContext db = new ApplicationDbContext();
     }
 }

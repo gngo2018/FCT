@@ -6,35 +6,44 @@
 
 <h2>@Html.DisplayFor(model => model.TournamentName)</h2>
 
+
+
 <div>
     <h4>And the Winner is...</h4>
+    <br />
+    <div class="row">
+        <dl class="dl-horizontal col-lg-4">
+            <dt>
+                @Html.DisplayNameFor(model => model.BracketId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BracketId)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-lg-4">
+            <dt>
+                @Html.DisplayNameFor(model => model.TournamentName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TournamentName)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-lg-4">
+            <dt>
+                @Html.DisplayNameFor(model => model.Location)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Location)
+            </dd>
+        </dl>
+
+    </div>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.BracketId)
-        </dt>
+    <dl class="dl-horizontal col-lg-4">
 
-        <dd>
-            @Html.DisplayFor(model => model.BracketId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TournamentName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TournamentName)
-        </dd>
-
-        <br />
         <dt>
             @Html.DisplayName("Round:")
         </dt>
@@ -146,13 +155,17 @@
         </dd>
 
         <br />
+    </dl>
 
+    <dl class="dl-horizontal col-lg-4">
         <dt>
             @Html.DisplayName("Round:")
         </dt>
         <dd>
             @Html.DisplayName("Final Four")
         </dd>
+        <br />
+        <br />
         <br />
         <dt>
             @Html.DisplayName("Final Four Contestant 1")
@@ -179,7 +192,10 @@
         </dd>
 
         <br />
-
+        <br />
+        <br />
+        <br />
+        <br />
         <dt>
             @Html.DisplayName("Final Four Contestant 3")
         </dt>
@@ -205,13 +221,20 @@
         </dd>
 
         <br />
-
+    </dl>
+    <dl class="dl-horizontal col-lg-4">
         <dt>
             @Html.DisplayName("Round:")
         </dt>
         <dd>
             @Html.DisplayName("Final")
         </dd>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <dt>
             @Html.DisplayName("Final Character 1")
@@ -229,7 +252,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FinalWinnerId)
+            @Html.DisplayName("Champion")
         </dt>
 
         <dd>
@@ -238,7 +261,34 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.BracketId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.BracketId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+

@@ -15,11 +15,8 @@ namespace CharacterThrowdown.Models
         [Display(Name = "Battle Name")]
         public string BattleName { get; set; }
         public string Location { get; set; }
-        [Display(Name = "Character 1 ID")]
         public int FirstCharacterId { get; set; }
-        [Display(Name = "Character 2 ID")]
         public int SecondCharacterId { get; set; }
-        [Display(Name = "Winner ID")]
         public int WinnerCharacterId { get; set; }
         public int FirstItemId { get; set; }
         public int SecondItemId { get; set; }
