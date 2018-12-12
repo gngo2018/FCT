@@ -3,295 +3,307 @@
 @{
     ViewBag.Title = "Details";
 }
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="bracketDelete">
+    <h2><strong>@Html.DisplayFor(model => model.TournamentName)</strong></h2>
 
-<h2>@Html.DisplayFor(model => model.TournamentName)</h2>
+    <div>
+        <h4>Are you sure you want to delete this bracket?</h4>
+        <br />
+        <div class="row">
+            <dl class="dl-horizontal col-lg-4">
+                <dt>
+                    @Html.DisplayName("Tournament ID")
+                </dt>
 
-<div>
-    <h4>Are you sure you want to delete this bracket?</h4>
+                <dd>
+                    @Html.DisplayFor(model => model.BracketId)
+                </dd>
+            </dl>
+            <dl class="dl-horizontal col-lg-4">
+                <dt>
+                    @Html.DisplayNameFor(model => model.TournamentName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TournamentName)
+                </dd>
+            </dl>
+            <dl class="dl-horizontal col-lg-4">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Location)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Location)
+                </dd>
+            </dl>
+
+        </div>
+        <hr />
+        <dl class="dl-horizontal col-lg-4">
+
+            <dt>
+                @Html.DisplayName("Round:")
+            </dt>
+            <dd>
+                @Html.DisplayName("Elite 8")
+            </dd>
+            <br />
+            <dt>
+                @Html.DisplayName("Elite Eight Contestant 1")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstCharacterEight.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Elite Eight Contestant 2")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SecondCharacterEight.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Winner")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstEightWinner.CharacterName)
+            </dd>
+
+            <br />
+
+            <dt>
+                @Html.DisplayName("Elite Eight Contestant 3")
+
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ThirdCharacterEight.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Elite Eight Contestant 4")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FourthCharacterEight.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Winner")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SecondEightWinner.CharacterName)
+            </dd>
+
+            <br />
+
+            <dt>
+                @Html.DisplayName("Elite Eight Contestant 5")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FifthCharacterEight.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Elite Eight Contestant 6")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SixthCharacterEight.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Winner")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ThirdEightWinner.CharacterName)
+            </dd>
+
+            <br />
+
+            <dt>
+                @Html.DisplayName("Elite Eight Contestant 7")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SeventhCharacterEight.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Elite Eight Contestant 8")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EighthCharacterEight.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Winner")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FourthEightWinner.CharacterName)
+            </dd>
+
+            <br />
+        </dl>
+
+        <dl class="dl-horizontal col-lg-4">
+            <dt>
+                @Html.DisplayName("Round:")
+            </dt>
+            <dd>
+                @Html.DisplayName("Final Four")
+            </dd>
+            <br />
+            <br />
+            <br />
+            <dt>
+                @Html.DisplayName("Final Four Contestant 1")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstEightWinner.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Final Four Contestant 2")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SecondEightWinner.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Winner")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstFourWinner.CharacterName)
+            </dd>
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <dt>
+                @Html.DisplayName("Final Four Contestant 3")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ThirdEightWinner.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Final Four Contestant 4")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FourthEightWinner.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Winner")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SecondFourWinner.CharacterName)
+            </dd>
+
+            <br />
+        </dl>
+        <dl class="dl-horizontal col-lg-4">
+            <dt>
+                @Html.DisplayName("Round:")
+            </dt>
+            <dd>
+                @Html.DisplayName("Final")
+            </dd>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div>
+                <img src="../../Assets/champcrown.png" />
+            </div>
+            <br />
+            <dt>
+                @Html.DisplayName("Final Character 1")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstFourWinner.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Final Character 2")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SecondFourWinner.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FinalWinnerId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FinalWinner.CharacterName)
+            </dd>
+            <br />
+            <div>
+                <img src="../../Assets/belt.png" />
+            </div>
+        </dl>
+    </div>
+
     <br />
-    <div class="row">
-        <dl class="dl-horizontal col-lg-4">
-            <dt>
-                @Html.DisplayNameFor(model => model.BracketId)
-            </dt>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
-            <dd>
-                @Html.DisplayFor(model => model.BracketId)
-            </dd>
-        </dl>
-        <dl class="dl-horizontal col-lg-4">
-            <dt>
-                @Html.DisplayNameFor(model => model.TournamentName)
-            </dt>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-            <dd>
-                @Html.DisplayFor(model => model.TournamentName)
-            </dd>
-        </dl>
-        <dl class="dl-horizontal col-lg-4">
-            <dt>
-                @Html.DisplayNameFor(model => model.Location)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Location)
-            </dd>
-        </dl>
-
-    </div>
-    <hr />
-    <dl class="dl-horizontal col-lg-4">
-
-        <dt>
-            @Html.DisplayName("Round:")
-        </dt>
-        <dd>
-            @Html.DisplayName("Elite 8")
-        </dd>
-        <br />
-        <dt>
-            @Html.DisplayName("Elite Eight Contestant 1")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstCharacterEight.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Elite Eight Contestant 2")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SecondCharacterEight.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Winner")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstEightWinner.CharacterName)
-        </dd>
-
-        <br />
-
-        <dt>
-            @Html.DisplayName("Elite Eight Contestant 3")
-
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ThirdCharacterEight.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Elite Eight Contestant 4")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FourthCharacterEight.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Winner")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SecondEightWinner.CharacterName)
-        </dd>
-
-        <br />
-
-        <dt>
-            @Html.DisplayName("Elite Eight Contestant 5")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FifthCharacterEight.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Elite Eight Contestant 6")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SixthCharacterEight.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Winner")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ThirdEightWinner.CharacterName)
-        </dd>
-
-        <br />
-
-        <dt>
-            @Html.DisplayName("Elite Eight Contestant 7")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SeventhCharacterEight.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Elite Eight Contestant 8")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EighthCharacterEight.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Winner")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FourthEightWinner.CharacterName)
-        </dd>
-
-        <br />
-    </dl>
-
-    <dl class="dl-horizontal col-lg-4">
-        <dt>
-            @Html.DisplayName("Round:")
-        </dt>
-        <dd>
-            @Html.DisplayName("Final Four")
-        </dd>
-        <br />
-        <br />
-        <br />
-        <dt>
-            @Html.DisplayName("Final Four Contestant 1")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstEightWinner.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Final Four Contestant 2")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SecondEightWinner.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Winner")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstFourWinner.CharacterName)
-        </dd>
-
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <dt>
-            @Html.DisplayName("Final Four Contestant 3")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ThirdEightWinner.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Final Four Contestant 4")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FourthEightWinner.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Winner")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SecondFourWinner.CharacterName)
-        </dd>
-
-        <br />
-    </dl>
-    <dl class="dl-horizontal col-lg-4">
-        <dt>
-            @Html.DisplayName("Round:")
-        </dt>
-        <dd>
-            @Html.DisplayName("Final")
-        </dd>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <dt>
-            @Html.DisplayName("Final Character 1")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.FirstFourWinner.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Final Character 2")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SecondFourWinner.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FinalWinnerId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FinalWinner.CharacterName)
-        </dd>
-
-    </dl>
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
 </div>
-
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-actions no-color">
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-}

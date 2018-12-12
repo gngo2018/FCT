@@ -5,6 +5,7 @@ using CharacterThrowDown.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -54,16 +55,6 @@ namespace CharacterThrowDown.WebMVC.Controllers
             };
 
             ModelState.AddModelError("", "Bracket was unable to be created, please try again");
-
-            ViewBag.FirstCharacterEightId = new SelectList(svc.Characters(), "FirstCharacterEightId", "CharacterName", model.FirstCharacterEightId);
-            ViewBag.SecondCharacterEightId = new SelectList(svc.Characters(), "SecondCharacterEightId", "CharacterName", model.SecondCharacterEightId);
-            ViewBag.ThirdCharacterEightId = new SelectList(svc.Characters(), "ThirdCharacterEightId", "CharacterName", model.ThirdCharacterEightId);
-            ViewBag.FourthCharacterEightId = new SelectList(svc.Characters(), "FourthCharacterEightId", "CharacterName", model.FourthCharacterEightId);
-            ViewBag.FifthCharacterEightId = new SelectList(svc.Characters(), "FifthCharacterEightId", "CharacterName", model.FifthCharacterEightId);
-            ViewBag.SixthCharacterEightId = new SelectList(svc.Characters(), "SixthCharacterEightId", "CharacterName", model.SixthCharacterEightId);
-            ViewBag.SeventhCharacterEightId = new SelectList(svc.Characters(), "SeventhCharacterEightId", "CharacterName", model.SeventhCharacterEightId);
-            ViewBag.EighthCharacterEightId = new SelectList(svc.Characters(), "EighthCharacterEightId", "CharacterName", model.EighthCharacterEightId);
-
 
             return View(model);
         }
@@ -132,15 +123,6 @@ namespace CharacterThrowDown.WebMVC.Controllers
                 TempData["SaveResult"] = "Your Bracket was updated.";
                 return RedirectToAction("Index");
             }
-
-            ViewBag.FirstCharacterId = new SelectList(svc.Characters(), "FirstCharacterId", "CharacterName", model.FirstCharacterId);
-            ViewBag.SecondCharacterId = new SelectList(svc.Characters(), "SecondCharacterId", "CharacterName", model.SecondCharacterId);
-            ViewBag.ThirdCharacterId = new SelectList(svc.Characters(), "ThirdCharacterId", "CharacterName", model.ThirdCharacterId);
-            ViewBag.FourthCharacterId = new SelectList(svc.Characters(), "FourthCharacterId", "CharacterName", model.FourthCharacterId);
-            ViewBag.FifthCharacterId = new SelectList(svc.Characters(), "FifthCharacterId", "CharacterName", model.FifthCharacterId);
-            ViewBag.SixthCharacterId = new SelectList(svc.Characters(), "SixthCharacterId", "CharacterName", model.SixthCharacterId);
-            ViewBag.SeventhCharacterId = new SelectList(svc.Characters(), "SeventhCharacterId", "CharacterName", model.SeventhCharacterId);
-            ViewBag.EighthCharacterId = new SelectList(svc.Characters(), "EighthCharacterId", "CharacterName", model.EighthCharacterId);
 
             ModelState.AddModelError("", "Your Battle could not be updated");
             return View(model);

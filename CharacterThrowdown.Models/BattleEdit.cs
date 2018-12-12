@@ -1,6 +1,7 @@
 ﻿using CharacterThrowdown.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace CharacterThrowdown.Models
     public class BattleEdit
     {
         public int BattleId { get; set; }
+        [Display(Name="Battle Name")]
         public string BattleName { get; set; }
         public string Location { get; set; }
         public int FirstCharacterId { get; set; }

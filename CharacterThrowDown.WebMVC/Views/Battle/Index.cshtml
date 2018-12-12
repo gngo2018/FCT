@@ -3,68 +3,74 @@
 @{
     ViewBag.Title = "Battle Index";
 }
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="battleIndex">
+    <h2>Battle Index</h2>
 
-<h2>Battle Index</h2>
+    <p>
+        @Html.ActionLink("Create Battle", "Create")
+    </p>
 
-<p>
-    @Html.ActionLink("Create Battle", "Create")
-</p>
-
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
-        @ViewBag.SaveResult
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.BattleId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BattleName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstCharacterId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SecondCharacterId)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
+    @if (TempData.ContainsKey("SaveResult"))
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.BattleId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BattleName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstCharacter.CharacterName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SecondCharacter.CharacterName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.BattleId }) |
-                @Html.ActionLink("Simulate", "Details", new { id = item.BattleId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.BattleId })
-            </td>
-        </tr>
+        <div class="alert alert-success fade in" role="alert">
+            @ViewBag.SaveResult
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
     }
 
-</table>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BattleId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BattleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstCharacterId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondCharacterId)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BattleId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BattleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstCharacter.CharacterName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SecondCharacter.CharacterName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BattleId }) |
+                    @Html.ActionLink("Simulate", "Details", new { id = item.BattleId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BattleId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -3,126 +3,154 @@
 @{
     ViewBag.Title = "Details";
 }
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="battleDetails">
+    <h2>Battle Result</h2>
 
-<h2>Battle Result</h2>
+    <div>
+        <h4>And the winner is...</h4>
+        <dl class="dl-horizontal col-lg-4">
+            <dt>
+                @Html.DisplayNameFor(model => model.BattleId)
+            </dt>
 
-<div>
-    <h4>And the winner is...</h4>
-    <dl class="dl-horizontal col-lg-4">
-        <dt>
-            @Html.DisplayNameFor(model => model.BattleId)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.BattleId)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-lg-4">
 
-        <dd>
-            @Html.DisplayFor(model => model.BattleId)
-        </dd>
-    </dl>
-    <dl class="dl-horizontal col-lg-4">
+            <dt>
+                @Html.DisplayNameFor(model => model.BattleName)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BattleName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.BattleName)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-lg-4">
+            <dt>
+                @Html.DisplayNameFor(model => model.Location)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BattleName)
-        </dd>
-    </dl>
-    <dl class="dl-horizontal col-lg-4">
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
-    </dl>
-    <br />
-    </dl>
-    <hr />
-    <dl class="dl-horizontal col-lg-4">
-
-        <dt>
-            @Html.DisplayName("Character ID")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstCharacterId)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Character 1")
-
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstCharacter.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Character 1 Weapon")
-
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstItem.ItemName)
-        </dd>
-
+            <dd>
+                @Html.DisplayFor(model => model.Location)
+            </dd>
+        </dl>
         <br />
-        <dt>
-            @Html.DisplayName("Character 2 ID")
-        </dt>
+        <br />
 
-        <dd>
-            @Html.DisplayFor(model => model.SecondCharacterId)
-        </dd>
+        </dl>
+        <hr />
+        <br />
+        <dl class="dl-horizontal col-lg-4">
+            <br />
+            <dt>
+                @Html.DisplayName("Character ID")
+            </dt>
 
-        <dt>
-            @Html.DisplayName("Character 2")
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstCharacterId)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.SecondCharacter.CharacterName)
-        </dd>
+            <dt>
+                @Html.DisplayName("Character 1")
 
-        <dt>
-            @Html.DisplayName("Character 2 Weapon")
+            </dt>
 
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstCharacter.CharacterName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.SecondItem.ItemName)
-        </dd>
-    </dl>
-    <dl class="dl-horizontal col-lg-8">
-        <dt>
-            @Html.DisplayName("Winner ID")
-        </dt>
+            <dt>
+                @Html.DisplayName("Character 1 Weapon")
 
-        <dd>
-            @Html.DisplayFor(model => model.WinnerCharacterId)
-        </dd>
-        <dt>
-            @Html.DisplayName("Bout Winner")
-        </dt>
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.WinnerCharacter.CharacterName)
-        </dd>
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.FirstItem.ItemName)
+            </dd>
+
+            <br />
+            <br />
+            <dt>
+                @Html.DisplayName("Character 2 ID")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SecondCharacterId)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Character 2")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SecondCharacter.CharacterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Character 2 Weapon")
+
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SecondItem.ItemName)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal col-lg-8">
+            <br />
+            <div>
+                <img src="../../Assets/crown.png" />
+            </div>
+            <br />
+            <dt>
+                @Html.DisplayName("Winner ID")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.WinnerCharacterId)
+            </dd>
+            <dt>
+                @Html.DisplayName("Bout Winner")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.WinnerCharacter.CharacterName)
+            </dd>
+            <dt>
+                @Html.DisplayName("Winner Universe")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.WinnerCharacter.CharacterUniverse)
+            </dd>
+            <dt>
+                @Html.DisplayName("Winner Ability")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.WinnerCharacter.CharacterAbility)
+            </dd>
+        </dl>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.BattleId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.BattleId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
