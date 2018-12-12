@@ -3,13 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - S""CQ</title>
+    <link href="https://fonts.googleapis.com/css?family=Gruppo|Press+Start+2P|Bangers|Michroma" rel="stylesheet">
+    <title>@ViewBag.Title - Champ Challenge</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
+                @Html.ActionLink("Challenge of Champions", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,29 +19,41 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Super Character Quarrel", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
+                    @Html.Partial("_LoginPartial")
                 <ul class="nav navbar-nav">
                     @if (User.Identity.IsAuthenticated)
                     {
-                    <li>@Html.ActionLink("Characters", "Index", "Character")</li>
-                    <li>@Html.ActionLink("Items", "Index", "Item")</li>
-                    <li>@Html.ActionLink("Battles", "Index", "Battle")</li>
+                        <li class="navButton" id="navCharacter"><a href="@Url.Action("Index", "Character")"></a></li>
+                        <li class="spacer">Characters</li>
+                        <li class="spacerTwo">s</li>
+                        <li class="navButton" id="navItem"><a href="@Url.Action("Index", "Item")"></a></li>
+                        <li class="spacerTwo">s</li>
+                        <li class="spacer">Items</li>
+                        <li class="spacerTwo">s</li>
+                        <li class="spacerTwo">s</li>
+                        <li class="navButton" id="navBattles"><a href="@Url.Action("Index", "Battle")"></a></li>
+                        <li class="spacerTwo">s</li>
+                        <li class="spacer">One on One</li>
+                        <li class="spacerTwo">s</li>
                     }
-                    <li>@Html.ActionLink("Tournament Bracket", "Index", "Bracket")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="navButton" id="navBracket"><a href="@Url.Action("Index", "Bracket")"></a></li>
+                    <li class="spacerTwo">s</li>
+                    <li class="spacerTwo">s</li>
+                    <li class="spacer">Bracket</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
+        @*<div class="jumbotron">
+            <h1>Filler Ex</h1>
+        </div>*@
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Super "" Character Quarrel</p>
+            <p>&copy; @DateTime.Now.Year - Challenge of Champions</p>
         </footer>
     </div>
 

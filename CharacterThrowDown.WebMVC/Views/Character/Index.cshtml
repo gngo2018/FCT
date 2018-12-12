@@ -3,11 +3,16 @@
 @{
     ViewBag.Title = "Index";
 }
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="characterIndex">
+<h2>Character Roster</h2>
 
-<h2>Character Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
+<p id="createCharacter">
+    @Html.ActionLink("Create New Character", "Create")
 </p>
 
 @if (TempData.ContainsKey("SaveResult"))
@@ -31,20 +36,22 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CharacterId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CharacterName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CharacterId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.CharacterId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.CharacterId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CharacterId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CharacterName)
+            </td>
+            <td id="characterActionLinks">
+                @Html.ActionLink("Edit", "Edit", new { id = item.CharacterId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CharacterId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CharacterId })
+            </td>
+        </tr>
+    }
 
 </table>
+</div>

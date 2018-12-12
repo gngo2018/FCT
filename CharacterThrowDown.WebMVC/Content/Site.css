@@ -1,7 +1,12 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    /*background-image: url("https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/815/cached.offlinehbpl.hbpl.co.uk/news/SUC/1-20160505062747698.jpg")*/;
+    /*background-image: url('../Assets/area.jpg');*/
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%;
+    background-color: #008383;
+    color: black;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,4 +27,436 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.navbar {
+    background-color:black;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #008383;
+    font-family: 'Bangers', cursive;
+    margin-left: 5%;
+}
+
+.navbar-brand{
+    float: left;
+    height: 50px;
+    padding: 15px 0 0 0;
+    font-size: 30px;
+    line-height:20px;
+}
+.navButton {
+    background-color: transparent;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom:5px;
+}
+
+.spacer {
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 70%;
+}
+.spacerTwo{
+    color: black;
+}
+
+.navbar-inverse .navbar-nav li a {
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 70%;
+}
+
+#navCharacter {
+    background-image: url('../Assets/ironman.png');
+    background-position: center top;
+    background-size: 80%;
+}
+
+#navItem {
+    background-image: url('../Assets/item.png');
+    background-size: 140%;
+    background-position: center;
+}
+#navBattles {
+    background-image: url('../Assets/icon.png');
+    background-size: 125%;
+    background-position: center;
+}
+#navBracket {
+    background-image: url('../Assets/bracket.jpg');
+    background-size: 125%;
+    background-position: center;
+}
+
+footer{
+    color: white;
+}
+.about {
+    font-family: 'Gruppo', cursive;
+    color: white;
+}
+
+.about h1{
+    font-weight: bold;
+}
+.contact {
+    font-family: 'Gruppo', cursive;
+    color: white;
+    font-size:200%;
+}
+
+.contact h1{
+    font-weight: bold;
+}
+
+.contact a{
+    color:white;
+}
+
+.jumbotronImage img{
+    width:60%;
+    border: 2px solid black;
+    position: center;
+    margin-left: 17%;
+}
+
+.jumbotronHeader h1 {
+    font-family: 'Gruppo', cursive;
+    color: white;
+    font-size: 400%;
+}
+
+.jumbotronInfo {
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+    color: black;
+}
+
+.jumbotronInfo a{
+    color: white;
+}
+
+.jumbotronFooter p{
+    color: white;
+    font-family: 'Gruppo', cursive;
+}
+
+#buttonFooter{
+    background-color:darkgrey;
+}
+
+/*Character Views*/
+.characterIndex {
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+}
+
+.characterIndex a{
+    color: white;
+}
+
+.characterCreate {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 100%;
+}
+.characterCreate h2{
+    font-weight: bold;
+}
+.characterCreate a{
+    color: white;
+}
+
+.characterCreate select {
+    color: black;
+    width: 100%;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+.characterEdit {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 145%;
+}
+.characterEdit h2{
+    font-weight: bold;
+}
+.characterEdit a{
+    color: white;
+}
+.characterEdit select{
+    color: black;
+    width: 100%;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+.characterDetails {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 145%;
+}
+.characterDetails h2{
+    font-weight: bold;
+}
+
+.characterDetails a{
+    color: white;
+}
+
+.characterDelete {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 145%;
+}
+.characterDelete h2{
+    font-weight: bold;
+}
+.characterDelete a{
+    color: white;
+}
+
+/*Item Views*/
+.itemIndex {
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+}
+
+.itemIndex a{
+    color: white;
+}
+
+.itemCreate {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 145%;
+}
+
+.itemCreate h2{
+    font-weight: bold;
+}
+.itemCreate a{
+    color: white;
+}
+
+.itemCreate select {
+    color: black;
+    width: 100%;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+.itemEdit {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 145%;
+}
+.itemEdit h2{
+    font-weight: bold;
+}
+.itemEdit a{
+    color: white;
+}
+.itemEdit select{
+    color: black;
+    width: 100%;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+.itemDetails {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 145%;
+}
+
+.itemDetails h2{
+    font-weight: bold;
+}
+
+.itemDetails a{
+    color: white;
+}
+
+.itemDelete {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 145%;
+}
+.itemDelete h2{
+    font-weight: bold;
+}
+.itemDelete a{
+    color: white;
+}
+
+/*Battle Views*/
+.battleIndex {
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+}
+
+.battleIndex a{
+    color: white;
+}
+
+.battleCreate {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 145%;
+}
+.battleCreate h2{
+    font-weight: bold;
+}
+.battleCreate a{
+    color: white;
+}
+
+.battleCreate select {
+    color: black;
+    width: 100%;
+    border-radius: 5px;
+    padding-bottom:.5%;
+}
+
+.battleEdit {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 145%;
+}
+
+.battleEdit h2{
+    font-weight: bold;
+}
+
+.battleEdit a{
+    color: white;
+}
+.battleEdit select{
+    color: black;
+    width: 100%;
+    border-radius: 5px;
+    padding-bottom:.5%;
+}
+
+.battleDetails {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 120%;
+}
+.battleDetails h2{
+    font-weight: bold;
+}
+.battleDetails a{
+    color: white;
+}
+.battleDetails img{
+    width:8%;
+    margin-left:18%;
+}
+
+.battleDelete {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 140%;
+}
+.battleDelete h2{
+    font-weight: bold;
+}
+
+.battleDelete a{
+    color: white;
+}
+.battleDelete img{
+    width:8%;
+    margin-left:18%;
+}
+/*Bracket Views*/
+.bracketIndex {
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+}
+
+.bracketIndex a{
+    color: white;
+}
+
+.bracketCreate {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 100%;
+}
+.bracketCreate h2{
+    font-weight: bold;
+}
+.bracketCreate a{
+    color: white;
+}
+.bracketCreate h5{
+    margin-left:10.5%;
+}
+
+.bracketCreate select {
+    color: black;
+    width: 100%;
+    border-radius: 5px;
+    padding-bottom:.5%;
+}
+
+.bracketEdit {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 100%;
+}
+.bracketEdit h2{
+    font-weight: bold;
+}
+.bracketEdit a{
+    color: white;
+}
+.bracketEdit h5 {
+    margin-left: 10.5%;
+}
+.bracketEdit select{
+    color: black;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.bracketDetails {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size:120%;
+}
+
+.bracketDetails img {
+    width: 50%;
+    margin-left:16%;
+}
+
+.bracketDetails a{
+    color: white;
+}
+
+.bracketDelete {
+    color: white;
+    font-family: 'Gruppo', cursive;
+    font-size: 120%;
+}
+
+.bracketDelete a{
+    color: white;
+}
+.bracketDelete img {
+    width: 50%;
+    margin-left:16%;
 }
