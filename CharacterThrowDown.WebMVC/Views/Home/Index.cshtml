@@ -1,40 +1,42 @@
-﻿@{
+﻿<body id="homeBody">
+
+@{
     ViewBag.Title = "Home Page";
 }
 <br />
 <br />
 
-
-<div class="jumbotronHeader">
-    <h1>The <strong>Ultimate</strong> Argument Ender</h1>
-</div>
-<div class="jumbotronInfo">
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Say what?</h2>
-            <p>Our cutting edge simulation technology allows you to input your favorite characters and put them head to head with each other. We have recently introduced a tournament-style setting allowing users to input multiple characters into a bracket.</p>
-            <p id="about"><a href="@Url.Action("About", "Home")">About</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                Using the Challenge of Champions app is simple. First, you will need to register an account in order to receive full access. You may view/update previous brackets people have made, but will not be able to create new characters, weapons, or simulate one-on-one battles.
-            </p>
-            <p id="contact"><a href="@Url.Action("Contact", "Home")">Contact</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Customizable</h2>
-            <p>You will be able to create characters, items, one vs one scenarios, and tournament brackets. Brackets from other users will also be available for you to view, edit, and study for your next simulation!</p>
+    <div class="jumbotronHeader">
+        <h1>The <strong>Ultimate</strong> Argument Ender</h1>
+    </div>
+    <div class="jumbotronInfo">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Say what?</h2>
+                <p>Our cutting edge simulation technology allows you to input your favorite characters and put them head to head with each other. We have recently introduced a tournament-style setting allowing users to input multiple characters into a bracket.</p>
+                <p id="about"><a href="@Url.Action("About", "Home")">About</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Getting started</h2>
+                <p>
+                    Using the Challenge of Champions app is simple. First, you will need to register an account in order to receive full access. You may view/update previous brackets people have made, but will not be able to create new characters, weapons, or simulate one-on-one battles.
+                </p>
+                <p id="contact"><a href="@Url.Action("Contact", "Home")">Contact</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Customizable</h2>
+                <p>You will be able to create characters, items, one vs one scenarios, and tournament brackets. Brackets from other users will also be available for you to view, edit, and study for your next simulation!</p>
+            </div>
         </div>
     </div>
-</div>
-<br />
-<div class="container">
-    <div class="jumbotronImage">
-        <img src="../Assets/icon.png" />
+    <br />
+    <div class="container">
+        <div class="jumbotronImage">
+            <img src="../Assets/icon.png" />
+        </div>
     </div>
-</div>
-<div class="jumbotronFooter">
-    <p class="lead">*Please note, all battle/bracket outcomes are statistically proven correct. If your favorite character didn't win, they simply weren't good enough.</p>
-    <p><a href="@Url.Action("Register","Account")" class="btn btn-primary btn-lg" id="buttonFooter">Sign Up &raquo;</a></p>
-</div>
+    <div class="jumbotronFooter">
+        <p class="lead">*Please note, all battle/bracket outcomes are statistically proven correct. If your favorite character didn't win, they simply weren't good enough.</p>
+        <p><a href="@Url.Action("Register","Account")" class="btn btn-primary btn-lg" id="buttonFooter">Sign Up &raquo;</a></p>
+    </div>
+</body>
