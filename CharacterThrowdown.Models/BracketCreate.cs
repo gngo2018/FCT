@@ -15,6 +15,7 @@ namespace CharacterThrowdown.Models
         public string Location { get; set; }
         [Display(Name = "Tournament Name")]
         public string TournamentName { get; set; }
+        [Required]
         [Display(Name="Character 1")]
         public int FirstCharacterEightId { get; set; }
         [Display(Name = "Character 2")]

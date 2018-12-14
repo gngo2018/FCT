@@ -50,6 +50,17 @@
 .manage a {
     color: white;
 }
+.createPassword {
+    background: #008383;
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+    padding: 1% 2% 1% 2%;
+    border: 2px solid black;
+    border-radius: 15px;
+    opacity: .95;
+    margin-top: 10%;
+}
 
 .manageLogIn {
     background: #008383;
