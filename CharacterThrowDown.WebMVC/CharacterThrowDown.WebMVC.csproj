@@ -212,8 +212,12 @@
   <ItemGroup>
     <Content Include="Assets\area.jpg" />
     <Content Include="Assets\background.png" />
+    <Content Include="Assets\belt.png" />
     <Content Include="Assets\bg.jpg" />
     <Content Include="Assets\bracket.jpg" />
+    <Content Include="Assets\champcrown.png" />
+    <Content Include="Assets\crown.png" />
+    <Content Include="Assets\icon.png" />
     <Content Include="Assets\ironman.png" />
     <Content Include="Assets\item.png" />
     <Content Include="Assets\rival.jpg" />
@@ -230,6 +234,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\ChallengeOfChampions - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

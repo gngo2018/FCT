@@ -1,12 +1,16 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    /*background-image: url('../Assets/area.jpg');*/
+    background: url('../Assets/icon.png');
     background-repeat: no-repeat;
     background-position: top;
-    background-size: 100%;
+    background-size:cover;
     background-color: #008383;
     color: black;
+}
+
+#homeBody {
+    background: #008383;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -154,6 +158,10 @@ footer{
     color: white;
     font-family: 'Michroma', cursive;
     font-size: 100%;
+    background: #008383;
+    padding:1% 2% 1% 2%;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 .characterIndex a{
@@ -164,6 +172,10 @@ footer{
     color: white;
     font-family: 'Gruppo', cursive;
     font-size: 100%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 .characterCreate h2{
     font-weight: bold;
@@ -183,6 +195,10 @@ footer{
     color: white;
     font-family: 'Gruppo', cursive;
     font-size: 145%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 .characterEdit h2{
     font-weight: bold;
@@ -201,6 +217,10 @@ footer{
     color: white;
     font-family: 'Gruppo', cursive;
     font-size: 145%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 .characterDetails h2{
     font-weight: bold;
@@ -214,6 +234,10 @@ footer{
     color: white;
     font-family: 'Gruppo', cursive;
     font-size: 145%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 .characterDelete h2{
     font-weight: bold;
@@ -227,6 +251,10 @@ footer{
     color: white;
     font-family: 'Michroma', cursive;
     font-size: 100%;
+    background: #008383;
+    padding: 1% 2%;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 .itemIndex a{
@@ -237,6 +265,10 @@ footer{
     color: white;
     font-family: 'Gruppo', cursive;
     font-size: 145%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 .itemCreate h2{
@@ -257,6 +289,10 @@ footer{
     color: white;
     font-family: 'Gruppo', cursive;
     font-size: 145%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 .itemEdit h2{
     font-weight: bold;
@@ -275,6 +311,10 @@ footer{
     color: white;
     font-family: 'Gruppo', cursive;
     font-size: 145%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 .itemDetails h2{
@@ -289,6 +329,10 @@ footer{
     color: white;
     font-family: 'Gruppo', cursive;
     font-size: 145%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 .itemDelete h2{
     font-weight: bold;
@@ -302,6 +346,10 @@ footer{
     color: white;
     font-family: 'Michroma', cursive;
     font-size: 100%;
+    background: #008383;
+    padding: 1% 2% 1% 2%;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 .battleIndex a{
@@ -312,6 +360,10 @@ footer{
     color: white;
     font-family: 'Gruppo', cursive;
     font-size: 145%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 .battleCreate h2{
     font-weight: bold;
@@ -331,6 +383,10 @@ footer{
     color: white;
     font-family: 'Gruppo', cursive;
     font-size: 145%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 .battleEdit h2{
@@ -351,6 +407,10 @@ footer{
     color: white;
     font-family: 'Gruppo', cursive;
     font-size: 120%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 .battleDetails h2{
     font-weight: bold;
@@ -367,6 +427,10 @@ footer{
     color: white;
     font-family: 'Gruppo', cursive;
     font-size: 140%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 .battleDelete h2{
     font-weight: bold;
@@ -384,6 +448,10 @@ footer{
     color: white;
     font-family: 'Michroma', cursive;
     font-size: 100%;
+    background: #008383;
+    padding: 1% 2% 1% 2%;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 .bracketIndex a{
@@ -394,6 +462,10 @@ footer{
     color: white;
     font-family: 'Gruppo', cursive;
     font-size: 100%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 .bracketCreate h2{
     font-weight: bold;
@@ -415,6 +487,10 @@ footer{
 .bracketEdit {
     color: white;
     font-family: 'Gruppo', cursive;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
     font-size: 100%;
 }
 .bracketEdit h2{
@@ -435,7 +511,11 @@ footer{
 .bracketDetails {
     color: white;
     font-family: 'Gruppo', cursive;
-    font-size:120%;
+    font-size: 120%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 .bracketDetails img {
@@ -451,6 +531,10 @@ footer{
     color: white;
     font-family: 'Gruppo', cursive;
     font-size: 120%;
+    padding: 1% 2% 1% 2%;
+    background: #008383;
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 .bracketDelete a{
