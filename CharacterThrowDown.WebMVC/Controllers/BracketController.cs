@@ -30,7 +30,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
             var characterService = CreateCharacterService();
             if (characterService.GetCharacters().Count() == 0)
             {
-                return RedirectToAction("Create", "Character");
+                return RedirectToAction("Index", "Home");
             }
             var characterList = new SelectList(service.Characters(), "CharacterId", "CharacterName");
             ViewBag.FirstCharacterEightId = characterList;
