@@ -635,6 +635,25 @@ footer{
     margin-left:16%;
 }
 
+#bracketFinalFour{
+   animation: 6s fadeIn;
+}
+
+
+#bracketFinal {
+    animation: 15s fadeIn;
+}
+
+@keyframes fadeIn{
+    0%{
+        visibility:hidden;
+        opacity: 0;
+    }
+    100%{
+        visibility:visible;
+    }
+}
+
 .bracketDetails a{
     color: white;
 }

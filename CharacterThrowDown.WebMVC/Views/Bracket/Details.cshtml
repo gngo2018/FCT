@@ -171,59 +171,59 @@
             <br />
             <br />
             <br />
-            <dt>
-                @Html.DisplayName("Final Four Contestant 1")
-            </dt>
+            <div id="bracketFinalFour">
+                <dt>
+                    @Html.DisplayName("Final Four Contestant 1")
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.FirstEightWinner.CharacterName)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.FirstEightWinner.CharacterName)
+                </dd>
 
-            <dt>
-                @Html.DisplayName("Final Four Contestant 2")
-            </dt>
+                <dt>
+                    @Html.DisplayName("Final Four Contestant 2")
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.SecondEightWinner.CharacterName)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.SecondEightWinner.CharacterName)
+                </dd>
 
-            <dt>
-                @Html.DisplayName("Winner")
-            </dt>
+                <dt>
+                    @Html.DisplayName("Winner")
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.FirstFourWinner.CharacterName)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.FirstFourWinner.CharacterName)
+                </dd>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <dt>
+                    @Html.DisplayName("Final Four Contestant 3")
+                </dt>
 
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <dt>
-                @Html.DisplayName("Final Four Contestant 3")
-            </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ThirdEightWinner.CharacterName)
+                </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.ThirdEightWinner.CharacterName)
-            </dd>
+                <dt>
+                    @Html.DisplayName("Final Four Contestant 4")
+                </dt>
 
-            <dt>
-                @Html.DisplayName("Final Four Contestant 4")
-            </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FourthEightWinner.CharacterName)
+                </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.FourthEightWinner.CharacterName)
-            </dd>
+                <dt>
+                    @Html.DisplayName("Winner")
+                </dt>
 
-            <dt>
-                @Html.DisplayName("Winner")
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.SecondFourWinner.CharacterName)
-            </dd>
-
+                <dd>
+                    @Html.DisplayFor(model => model.SecondFourWinner.CharacterName)
+                </dd>
+            </div>
             <br />
         </dl>
         <dl class="dl-horizontal col-lg-4">
@@ -242,32 +242,35 @@
                 <img src="../../Assets/champcrown.png" />
             </div>
             <br />
-            <dt>
-                @Html.DisplayName("Final Character 1")
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.FirstFourWinner.CharacterName)
-            </dd>
+            <div id="bracketFinal">
+                <dt>
+                    @Html.DisplayName("Final Character 1")
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FirstFourWinner.CharacterName)
+                </dd>
 
-            <dt>
-                @Html.DisplayName("Final Character 2")
-            </dt>
+                <dt>
+                    @Html.DisplayName("Final Character 2")
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.SecondFourWinner.CharacterName)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.SecondFourWinner.CharacterName)
+                </dd>
 
-            <dt>
-                @Html.DisplayName("Champion")
-            </dt>
+                <dt>
+                    @Html.DisplayName("Champion")
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.FinalWinner.CharacterName)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.FinalWinner.CharacterName)
+                </dd>
+            </div>
             <br />
             <div>
                 <img src="../../Assets/belt.png" />
             </div>
+
 
         </dl>
     </div>
