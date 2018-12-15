@@ -534,6 +534,12 @@ footer{
     margin-left:18%;
 }
 
+#battleWinner {
+    animation: fadeIn 3s forwards;
+    animation-delay: 2s;
+    visibility: hidden;
+}
+
 .battleDelete {
     color: white;
     font-family: 'Gruppo', cursive;
@@ -635,21 +641,35 @@ footer{
     margin-left:16%;
 }
 
-#bracketFinalFour{
-   animation: 6s fadeIn;
+#bracketEliteEight {
+    animation: hideToShow 0s 1s forwards;
+    visibility: hidden;
+}
+
+#bracketFinalFour {
+    animation: fadeIn 3s forwards;
+    animation-delay: 3s;
+    visibility: hidden;
 }
 
 
 #bracketFinal {
-    animation: 15s fadeIn;
+    animation: fadeIn 3s forwards;
+    animation-delay: 6s;
+    visibility: hidden;
+}
+
+@keyframes hideToShow{ 
+    to {visibility:visible;}
 }
 
 @keyframes fadeIn{
-    0%{
+    from{
         visibility:hidden;
         opacity: 0;
+
     }
-    100%{
+    to{
         visibility:visible;
     }
 }
