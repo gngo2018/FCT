@@ -8,7 +8,94 @@
     background-color: #008383;
     color: black;
 }
+/*#changePassword {
+    background: #008383;
+}*/
+.logIn {
+    background: #008383;
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+    padding: 1% 2% 1% 2%;
+    border: 2px solid black;
+    border-radius: 15px;
+    opacity: .95;
+    margin-top:10%;
+}
+.logIn a{
+    color: white;
+}
+.register {
+    background: #008383;
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+    padding: 1% 2% 1% 2%;
+    border: 2px solid black;
+    border-radius: 15px;
+    opacity: .95;
+    margin-top: 10%;
+}
+.manage {
+    background: #008383;
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+    padding: 1% 2% 1% 2%;
+    border: 2px solid black;
+    border-radius: 15px;
+    opacity: .95;
+    margin-top: 10%;
+}
 
+.error {
+    background: #008383;
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+    padding: 1% 2% 1% 2%;
+    border: 2px solid black;
+    border-radius: 15px;
+    opacity: .95;
+    margin-top: 10%;
+}
+.manage a {
+    color: white;
+}
+.createPassword {
+    background: #008383;
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+    padding: 1% 2% 1% 2%;
+    border: 2px solid black;
+    border-radius: 15px;
+    opacity: .95;
+    margin-top: 10%;
+}
+
+.manageLogIn {
+    background: #008383;
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+    padding: 1% 2% 1% 2%;
+    border: 2px solid black;
+    border-radius: 15px;
+    opacity: .95;
+    margin-top: 10%;
+}
+.changePassword{
+    background: #008383;
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+    padding: 1% 2% 1% 2%;
+    border: 2px solid black;
+    border-radius: 15px;
+    opacity: .95;
+    margin-top: 10%;
+}
 #homeBody {
     background: #008383;
 }
@@ -25,12 +112,33 @@
 .dl-horizontal dt {
     white-space: normal;
 }
-
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
+}
+.about {
+    background: #008383;
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+    padding: 1% 2% 1% 2%;
+    border: 2px solid black;
+    border-radius: 15px;
+    opacity: .95;
+}
+
+.contact {
+    background: #008383;
+    color: white;
+    font-family: 'Michroma', cursive;
+    font-size: 100%;
+    background: #008383;
+    padding: 1% 2% 1% 2%;
+    border: 2px solid black;
+    border-radius: 15px;
+    opacity: .95;
 }
 
 .navbar {
@@ -159,9 +267,10 @@ footer{
     font-family: 'Michroma', cursive;
     font-size: 100%;
     background: #008383;
-    padding:1% 2% 1% 2%;
+    padding: 1% 2% 1% 2%;
     border: 2px solid black;
     border-radius: 15px;
+    opacity: .95;
 }
 
 .characterIndex a{
@@ -255,6 +364,7 @@ footer{
     padding: 1% 2%;
     border: 2px solid black;
     border-radius: 15px;
+    opacity: .95;
 }
 
 .itemIndex a{
@@ -350,6 +460,7 @@ footer{
     padding: 1% 2% 1% 2%;
     border: 2px solid black;
     border-radius: 15px;
+    opacity: .95;
 }
 
 .battleIndex a{
@@ -423,6 +534,12 @@ footer{
     margin-left:18%;
 }
 
+#battleWinner {
+    animation: fadeIn 3s forwards;
+    animation-delay: 2s;
+    visibility: hidden;
+}
+
 .battleDelete {
     color: white;
     font-family: 'Gruppo', cursive;
@@ -452,6 +569,7 @@ footer{
     padding: 1% 2% 1% 2%;
     border: 2px solid black;
     border-radius: 15px;
+    opacity: .95;
 }
 
 .bracketIndex a{
@@ -521,6 +639,39 @@ footer{
 .bracketDetails img {
     width: 50%;
     margin-left:16%;
+}
+
+#bracketEliteEight {
+    animation: hideToShow 0s 1s forwards;
+    visibility: hidden;
+}
+
+#bracketFinalFour {
+    animation: fadeIn 3s forwards;
+    animation-delay: 3s;
+    visibility: hidden;
+}
+
+
+#bracketFinal {
+    animation: fadeIn 3s forwards;
+    animation-delay: 6s;
+    visibility: hidden;
+}
+
+@keyframes hideToShow{ 
+    to {visibility:visible;}
+}
+
+@keyframes fadeIn{
+    from{
+        visibility:hidden;
+        opacity: 0;
+
+    }
+    to{
+        visibility:visible;
+    }
 }
 
 .bracketDetails a{

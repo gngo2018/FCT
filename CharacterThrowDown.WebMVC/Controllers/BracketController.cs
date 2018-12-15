@@ -2,6 +2,7 @@
 using CharacterThrowdown.Models;
 using CharacterThrowdown.Services;
 using CharacterThrowDown.Data;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,11 @@ namespace CharacterThrowDown.WebMVC.Controllers
         public ActionResult Create()
         {
             var service = new BracketService();
+            var characterService = CreateCharacterService();
+            if (characterService.GetCharacters().Count() == 0)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var characterList = new SelectList(service.Characters(), "CharacterId", "CharacterName");
             ViewBag.FirstCharacterEightId = characterList;
             ViewBag.SecondCharacterEightId = characterList;
@@ -151,5 +157,11 @@ namespace CharacterThrowDown.WebMVC.Controllers
             return RedirectToAction("Index");
         }
 
+        private CharacterService CreateCharacterService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CharacterService(userId);
+            return service;
+        }
     }
 }
