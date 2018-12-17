@@ -7,7 +7,7 @@
 <br />
 <br />
 <div class="bracketEdit">
-    <h2>Edit</h2>
+    <h2>Bracket Edit</h2>
 
 
     @using (Html.BeginForm())
@@ -15,14 +15,14 @@
         @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>BracketEdit</h4>
+        <h4>What would you like to change?</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.BracketId)
 
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TournamentName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TournamentName,"Tournament Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TournamentName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TournamentName, "", new { @class = "text-danger" })

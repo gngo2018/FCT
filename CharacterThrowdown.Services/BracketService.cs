@@ -14,8 +14,14 @@ namespace CharacterThrowdown.Services
         public bool CreateBracket(BracketCreate model)
         {
             //Winner Generator
-            Random winner = new Random();
-            var outcome = winner.Next(0, 100);
+            var outcome = RandomWinnerOne(0, 100);
+            var outcomeTwo = RandomWinnerTwo(0, 100);
+            var outcomeThree = RandomWinnerThree(0, 100);
+            var outcomeFour = RandomWinnerFour(0, 100);
+            var outcomeFinalFour = RandomWinnerFinalFour(0, 100);
+            var outcomeFinalFourTwo = RandomWinnerFourTwo(0, 100);
+            var outcomeFinal = RandomWinnerFinal(0, 100);
+
             //First 8
             if (outcome < 50)
             {
@@ -26,7 +32,7 @@ namespace CharacterThrowdown.Services
                 model.FirstEightWinnerId = model.SecondCharacterEightId;
             }
             //Second 8
-            if (outcome < 50)
+            if (outcomeTwo < 50)
             {
                 model.SecondEightWinnerId = model.ThirdCharacterEightId;
             }
@@ -35,7 +41,7 @@ namespace CharacterThrowdown.Services
                 model.SecondEightWinnerId = model.FourthCharacterEightId;
             }
             //Third 8
-            if (outcome < 50)
+            if (outcomeThree < 50)
             {
                 model.ThirdEightWinnerId = model.FifthCharacterEightId;
             }
@@ -44,7 +50,7 @@ namespace CharacterThrowdown.Services
                 model.ThirdEightWinnerId = model.SixthCharacterEightId;
             }
             //Fourth 8
-            if (outcome < 50)
+            if (outcomeFour < 50)
             {
                 model.FourthEightWinnerId = model.SeventhCharacterEightId;
             }
@@ -86,10 +92,8 @@ namespace CharacterThrowdown.Services
                 };
 
 
-            Random newRandom = new Random();
-            var outcomeFour = newRandom.Next(0, 100);
             //First 4
-            if (outcomeFour < 50)
+            if (outcomeFinalFour < 50)
             {
                 entity.FirstFourWinnerId = entity.FirstCharacterFourId;
             }
@@ -98,7 +102,7 @@ namespace CharacterThrowdown.Services
                 entity.FirstFourWinnerId = entity.SecondCharacterFourId;
             }
             //Second 4
-            if (outcomeFour < 50)
+            if (outcomeFinalFourTwo < 50)
             {
                 entity.SecondFourWinnerId = entity.ThirdCharacterFourId;
             }
@@ -106,8 +110,6 @@ namespace CharacterThrowdown.Services
             {
                 entity.SecondFourWinnerId = entity.FourthCharacterFourId;
             }
-            Random finalRandom = new Random();
-            var outcomeFinal = finalRandom.Next(0, 100);
             //Final
             if (outcomeFinal < 50)
             {
@@ -271,9 +273,15 @@ namespace CharacterThrowdown.Services
 
         public bool UpdateBracket(BracketEdit model)
         {
+            var outcome = RandomWinnerOne(0, 100);
+            var outcomeTwo = RandomWinnerTwo(0, 100);
+            var outcomeThree = RandomWinnerThree(0, 100);
+            var outcomeFour = RandomWinnerFour(0, 100);
+            var outcomeFinalFour = RandomWinnerFinalFour(0, 100);
+            var outcomeFinalFourTwo = RandomWinnerFourTwo(0, 100);
+            var outcomeFinal = RandomWinnerFinal(0, 100);
+
             //First 8
-            Random winner = new Random();
-            var outcome = winner.Next(0, 100);
             if (outcome < 50)
             {
                 model.FirstEightWinnerId = model.FirstCharacterId;
@@ -283,7 +291,7 @@ namespace CharacterThrowdown.Services
                 model.FirstEightWinnerId = model.SecondCharacterId;
             }
             //Second 8
-            if (outcome < 50)
+            if (outcomeTwo < 50)
             {
                 model.SecondEightWinnerId = model.ThirdCharacterId;
             }
@@ -292,7 +300,7 @@ namespace CharacterThrowdown.Services
                 model.SecondEightWinnerId = model.FourthCharacterId;
             }
             //Third 8
-            if (outcome < 50)
+            if (outcomeThree < 50)
             {
                 model.ThirdEightWinnerId = model.FifthCharacterId;
             }
@@ -301,7 +309,7 @@ namespace CharacterThrowdown.Services
                 model.ThirdEightWinnerId = model.SixthCharacterId;
             }
             //Fourth 8
-            if (outcome < 50)
+            if (outcomeFour < 50)
             {
                 model.FourthEightWinnerId = model.SeventhCharacterId;
             }
@@ -309,7 +317,6 @@ namespace CharacterThrowdown.Services
             {
                 model.FourthEightWinnerId = model.EighthCharacterId;
             }
-
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
@@ -333,11 +340,8 @@ namespace CharacterThrowdown.Services
                 entity.FirstFourWinnerId = model.FirstFourWinnerId;
                 entity.SecondFourWinnerId = model.SecondFourWinnerId;
                 entity.FinalWinnerId = model.FinalWinnerId;
-
-                Random newRandom = new Random();
-                var outcomeFour = newRandom.Next(0, 100);
                 //First 4
-                if (outcomeFour < 50)
+                if (outcomeFinalFour < 50)
                 {
                     entity.FirstFourWinnerId = entity.FirstEightWinnerId;
                 }
@@ -346,7 +350,7 @@ namespace CharacterThrowdown.Services
                     entity.FirstFourWinnerId = entity.SecondEightWinnerId;
                 }
                 //Second 4
-                if (outcomeFour < 50)
+                if (outcomeFinalFourTwo < 50)
                 {
                     entity.SecondFourWinnerId = entity.ThirdEightWinnerId;
                 }
@@ -354,8 +358,6 @@ namespace CharacterThrowdown.Services
                 {
                     entity.SecondFourWinnerId = entity.FourthEightWinnerId;
                 }
-                Random finalRandom = new Random();
-                var outcomeFinal = finalRandom.Next(0, 100);
                 //Final
                 if (outcomeFinal < 50)
                 {
@@ -399,6 +401,37 @@ namespace CharacterThrowdown.Services
             {
                 return ctx.Brackets.ToList();
             }
+        }
+
+        private Random _random = new Random();
+        //New Random Number Generator
+        private int RandomWinnerOne(int min, int max)
+        {
+            return _random.Next(min, max);
+        }
+        private int RandomWinnerTwo(int min, int max)
+        {
+            return _random.Next(min, max);
+        }
+        private int RandomWinnerThree(int min, int max)
+        {
+            return _random.Next(min, max);
+        }
+        private int RandomWinnerFour(int min, int max)
+        {
+            return _random.Next(min, max);
+        }
+        private int RandomWinnerFinalFour(int min, int max)
+        {
+            return _random.Next(min, max);
+        }
+        private int RandomWinnerFourTwo(int min, int max)
+        {
+            return _random.Next(min, max);
+        }
+        private int RandomWinnerFinal(int min, int max)
+        {
+            return _random.Next(min, max);
         }
 
     }

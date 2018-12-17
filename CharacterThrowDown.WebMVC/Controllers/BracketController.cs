@@ -27,11 +27,11 @@ namespace CharacterThrowDown.WebMVC.Controllers
         public ActionResult Create()
         {
             var service = new BracketService();
-            var characterService = CreateCharacterService();
-            if (characterService.GetCharacters().Count() == 0)
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            //var characterService = CreateCharacterService();
+            //if (!ModelState.IsValid)
+            //{
+            //    return RedirectToAction("Register", "Account");
+            //}
             var characterList = new SelectList(service.Characters(), "CharacterId", "CharacterName");
             ViewBag.FirstCharacterEightId = characterList;
             ViewBag.SecondCharacterEightId = characterList;
@@ -130,7 +130,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Your Battle could not be updated");
+            ModelState.AddModelError("", "Your Bracket could not be updated");
             return View(model);
 
         }
@@ -153,15 +153,15 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             service.DeleteBracket(id);
 
-            TempData["SaveResult"] = "Your Character was deleted. Shame... they had no choice.";
+            TempData["SaveResult"] = "Your Bracket was deleted. You must've not liked the outcome.";
             return RedirectToAction("Index");
         }
 
-        private CharacterService CreateCharacterService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CharacterService(userId);
-            return service;
-        }
+        //private CharacterService CreateCharacterService()
+        //{
+        //    var userId = Guid.Parse(User.Identity.GetUserId());
+        //    var service = new CharacterService(userId);
+        //    return service;
+        //}
     }
 }
