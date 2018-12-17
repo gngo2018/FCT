@@ -118,7 +118,7 @@ namespace CharacterThrowDown.WebMVC.Controllers
 
             service.DeleteItem(id);
 
-            TempData["SaveResult"] = "Your item was Deleted! Time for a new one!";
+            TempData["SaveResult"] = "Your item was terminated. Time for a new one!";
 
             return RedirectToAction("Index");
         }
