@@ -723,6 +723,9 @@ footer{
 }
 
 @media only screen and (max-width: 600px) {
+    body{
+        padding-bottom:100%;
+    }
     #navCharacter {
         background-size: 10%;
     }
@@ -740,5 +743,8 @@ footer{
     }
     .bracketIndex{
         font-size: 80%;
+    }
+    .battleIndex{
+        font-size:70%;
     }
 }
