@@ -14,13 +14,13 @@ namespace CharacterThrowdown.Services
         public bool CreateBracket(BracketCreate model)
         {
             //Winner Generator
-            var outcome = RandomWinnerOne(0, 100);
-            var outcomeTwo = RandomWinnerTwo(0, 100);
-            var outcomeThree = RandomWinnerThree(0, 100);
-            var outcomeFour = RandomWinnerFour(0, 100);
-            var outcomeFinalFour = RandomWinnerFinalFour(0, 100);
-            var outcomeFinalFourTwo = RandomWinnerFourTwo(0, 100);
-            var outcomeFinal = RandomWinnerFinal(0, 100);
+            var outcome = RandomWinner(0, 100);
+            var outcomeTwo = RandomWinner(0, 100);
+            var outcomeThree = RandomWinner(0, 100);
+            var outcomeFour = RandomWinner(0, 100);
+            var outcomeFinalFour = RandomWinner(0, 100);
+            var outcomeFinalFourTwo = RandomWinner(0, 100);
+            var outcomeFinal = RandomWinner(0, 100);
 
             //First 8
             if (outcome < 50)
@@ -273,13 +273,13 @@ namespace CharacterThrowdown.Services
 
         public bool UpdateBracket(BracketEdit model)
         {
-            var outcome = RandomWinnerOne(0, 100);
-            var outcomeTwo = RandomWinnerTwo(0, 100);
-            var outcomeThree = RandomWinnerThree(0, 100);
-            var outcomeFour = RandomWinnerFour(0, 100);
-            var outcomeFinalFour = RandomWinnerFinalFour(0, 100);
-            var outcomeFinalFourTwo = RandomWinnerFourTwo(0, 100);
-            var outcomeFinal = RandomWinnerFinal(0, 100);
+            var outcome = RandomWinner(0, 100);
+            var outcomeTwo = RandomWinner(0, 100);
+            var outcomeThree = RandomWinner(0, 100);
+            var outcomeFour = RandomWinner(0, 100);
+            var outcomeFinalFour = RandomWinner(0, 100);
+            var outcomeFinalFourTwo = RandomWinner(0, 100);
+            var outcomeFinal = RandomWinner(0, 100);
 
             //First 8
             if (outcome < 50)
@@ -405,34 +405,9 @@ namespace CharacterThrowdown.Services
 
         private Random _random = new Random();
         //New Random Number Generator
-        private int RandomWinnerOne(int min, int max)
+        private int RandomWinner(int min, int max)
         {
             return _random.Next(min, max);
         }
-        private int RandomWinnerTwo(int min, int max)
-        {
-            return _random.Next(min, max);
-        }
-        private int RandomWinnerThree(int min, int max)
-        {
-            return _random.Next(min, max);
-        }
-        private int RandomWinnerFour(int min, int max)
-        {
-            return _random.Next(min, max);
-        }
-        private int RandomWinnerFinalFour(int min, int max)
-        {
-            return _random.Next(min, max);
-        }
-        private int RandomWinnerFourTwo(int min, int max)
-        {
-            return _random.Next(min, max);
-        }
-        private int RandomWinnerFinal(int min, int max)
-        {
-            return _random.Next(min, max);
-        }
-
     }
 }
