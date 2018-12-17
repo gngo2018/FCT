@@ -203,7 +203,6 @@ textarea {
     background-size: 125%;
     background-position: center;
 }
-
 footer{
     color: white;
 }
@@ -721,4 +720,31 @@ footer{
 .bracketDelete img {
     width: 50%;
     margin-left:16%;
+}
+
+@media only screen and (max-width: 600px) {
+    body{
+        padding-bottom:100%;
+    }
+    #navCharacter {
+        background-size: 10%;
+    }
+
+    #navItem {
+        background-size: 20%;
+    }
+
+    #navBattles {
+        background-size: 20%;
+    }
+
+    #navBracket {
+        background-size: 20%;
+    }
+    .bracketIndex{
+        font-size: 80%;
+    }
+    .battleIndex{
+        font-size:70%;
+    }
 }

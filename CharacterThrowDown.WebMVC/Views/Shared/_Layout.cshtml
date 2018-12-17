@@ -25,26 +25,28 @@
                 <ul class="nav navbar-nav">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li class="navButton" id="navCharacter"><a href="@Url.Action("Index", "Character")"></a></li>
-                        <li class="spacer">Characters</li>
                         <li class="spacerTwo">s</li>
-                        <li class="navButton" id="navItem"><a href="@Url.Action("Index", "Item")"></a></li>
+                        <li class="spacerTwo">s</li>
+                        <li class="spacer">Characters</li>
+                        <li class="navButton" id="navCharacter"><a href="@Url.Action("Index", "Character")"></a></li>
                         <li class="spacerTwo">s</li>
                         <li class="spacer">Items</li>
+                        <li class="navButton" id="navItem"><a href="@Url.Action("Index", "Item")"></a></li>
                         <li class="spacerTwo">s</li>
-                        <li class="spacerTwo">s</li>
-                        <li class="navButton" id="navBattles"><a href="@Url.Action("Index", "Battle")"></a></li>
                         <li class="spacerTwo">s</li>
                         <li class="spacer">One on One</li>
                         <li class="spacerTwo">s</li>
+                        <li class="navButton" id="navBattles"><a href="@Url.Action("Index", "Battle")"></a></li>
+                        <li class="spacerTwo">s</li>
+                        <li class="spacerTwo">s</li>
                     }
+                    <li class="spacer">Bracket</li>
                     <li class="spacerTwo">s</li>
                     <li class="spacerTwo">s</li>
                     <li class="navButton" id="navBracket"><a href="@Url.Action("Index", "Bracket")"></a></li>
                     <li class="spacerTwo">s</li>
                     <li class="spacerTwo">s</li>
 
-                    <li class="spacer">Bracket</li>
                 </ul>
             </div>
         </div>
