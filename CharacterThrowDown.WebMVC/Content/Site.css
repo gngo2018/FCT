@@ -538,6 +538,8 @@ footer{
     animation: fadeIn 3s forwards;
     animation-delay: 2s;
     visibility: hidden;
+    font-size: large;
+    font-weight: bold;
 }
 
 .battleDelete {
@@ -641,22 +643,47 @@ footer{
     margin-left:16%;
 }
 
-#bracketEliteEight {
-    animation: hideToShow 0s 1s forwards;
+.bracketEliteEight {
+    animation: fadeIn 1s forwards;
     visibility: hidden;
 }
 
-#bracketFinalFour {
+.winnerFirstRound{
     animation: fadeIn 3s forwards;
-    animation-delay: 3s;
+    animation-delay: 2s;
     visibility: hidden;
+    border: 2px solid gold;
 }
 
-
-#bracketFinal {
+.bracketFinalFour {
+    animation: fadeIn 3s forwards;
+    animation-delay: 4s;
+    visibility: hidden;
+}
+.winnerFinalFour {
     animation: fadeIn 3s forwards;
     animation-delay: 6s;
     visibility: hidden;
+    border: 2px solid gold;
+}
+
+.bracketFinal {
+    animation: fadeIn 3s forwards;
+    animation-delay: 8s;
+    visibility: hidden;
+}
+.champion {
+    animation: fadeIn 3s forwards;
+    animation-delay: 10s;
+    visibility: hidden;
+}
+#champion {
+    animation: fadeIn 3s forwards;
+    animation-delay: 10s;
+    visibility: hidden;
+    border: 2px solid gold;
+    font-size:x-large;
+    font-weight: bold;
 }
 
 @keyframes hideToShow{ 

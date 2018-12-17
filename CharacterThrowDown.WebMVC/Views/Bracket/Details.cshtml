@@ -55,7 +55,7 @@
                 @Html.DisplayName("Elite 8")
             </dd>
             <br />
-            <div id="bracketEliteEight">
+            <div class="bracketEliteEight">
                 <dt>
                     @Html.DisplayName("Elite Eight Contestant 1")
                 </dt>
@@ -71,15 +71,16 @@
                 <dd>
                     @Html.DisplayFor(model => model.SecondCharacterEight.CharacterName)
                 </dd>
+                <div class="winnerFirstRound">
 
-                <dt>
-                    @Html.DisplayName("Winner")
-                </dt>
+                    <dt>
+                        @Html.DisplayName("Winner")
+                    </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.FirstEightWinner.CharacterName)
-                </dd>
-
+                    <dd>
+                        @Html.DisplayFor(model => model.FirstEightWinner.CharacterName)
+                    </dd>
+                </div>
                 <br />
 
                 <dt>
@@ -98,15 +99,15 @@
                 <dd>
                     @Html.DisplayFor(model => model.FourthCharacterEight.CharacterName)
                 </dd>
+                <div class="winnerFirstRound">
+                    <dt>
+                        @Html.DisplayName("Winner")
+                    </dt>
 
-                <dt>
-                    @Html.DisplayName("Winner")
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.SecondEightWinner.CharacterName)
-                </dd>
-
+                    <dd>
+                        @Html.DisplayFor(model => model.SecondEightWinner.CharacterName)
+                    </dd>
+                </div>
                 <br />
 
                 <dt>
@@ -124,15 +125,15 @@
                 <dd>
                     @Html.DisplayFor(model => model.SixthCharacterEight.CharacterName)
                 </dd>
+                <div class="winnerFirstRound">
+                    <dt>
+                        @Html.DisplayName("Winner")
+                    </dt>
 
-                <dt>
-                    @Html.DisplayName("Winner")
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.ThirdEightWinner.CharacterName)
-                </dd>
-
+                    <dd>
+                        @Html.DisplayFor(model => model.ThirdEightWinner.CharacterName)
+                    </dd>
+                </div>
                 <br />
 
                 <dt>
@@ -150,14 +151,15 @@
                 <dd>
                     @Html.DisplayFor(model => model.EighthCharacterEight.CharacterName)
                 </dd>
+                <div class="winnerFirstRound">
+                    <dt>
+                        @Html.DisplayName("Winner")
+                    </dt>
 
-                <dt>
-                    @Html.DisplayName("Winner")
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.FourthEightWinner.CharacterName)
-                </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.FourthEightWinner.CharacterName)
+                    </dd>
+                </div>
             </div>
             <br />
         </dl>
@@ -172,7 +174,9 @@
             <br />
             <br />
             <br />
-            <div id="bracketFinalFour">
+            <br />
+            <br />
+            <div class="bracketFinalFour">
                 <dt>
                     @Html.DisplayName("Final Four Contestant 1")
                 </dt>
@@ -188,14 +192,15 @@
                 <dd>
                     @Html.DisplayFor(model => model.SecondEightWinner.CharacterName)
                 </dd>
+                <div class="winnerFinalFour">
+                    <dt>
+                        @Html.DisplayName("Winner")
+                    </dt>
 
-                <dt>
-                    @Html.DisplayName("Winner")
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.FirstFourWinner.CharacterName)
-                </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.FirstFourWinner.CharacterName)
+                    </dd>
+                </div>
                 <br />
                 <br />
                 <br />
@@ -216,14 +221,16 @@
                 <dd>
                     @Html.DisplayFor(model => model.FourthEightWinner.CharacterName)
                 </dd>
+                <div class="winnerFinalFour">
 
-                <dt>
-                    @Html.DisplayName("Winner")
-                </dt>
+                    <dt>
+                        @Html.DisplayName("Winner")
+                    </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.SecondFourWinner.CharacterName)
-                </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.SecondFourWinner.CharacterName)
+                    </dd>
+                </div>
             </div>
             <br />
         </dl>
@@ -238,9 +245,12 @@
             <br />
             <br />
             <br />
+            <br />
+            <br />
+            <br />
 
-            <div id="bracketFinal">
-                <div>
+            <div class="bracketFinal">
+                <div class="champion">
                     <img src="../../Assets/champcrown.png" />
                 </div>
                 <br />
@@ -258,16 +268,17 @@
                 <dd>
                     @Html.DisplayFor(model => model.SecondFourWinner.CharacterName)
                 </dd>
+                <div id="champion">
+                    <dt>
+                        @Html.DisplayName("Champion")
+                    </dt>
 
-                <dt>
-                    @Html.DisplayName("Champion")
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.FinalWinner.CharacterName)
-                </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.FinalWinner.CharacterName)
+                    </dd>
+                </div>
                 <br />
-                <div>
+                <div class="champion">
                     <img src="../../Assets/belt.png" />
                 </div>
             </div>
