@@ -11,5 +11,5 @@ View the deployed project: https://challengeofchampions.azurewebsites.net/ (Note
   - Queried database by use of Entity Framework and LINQ
   
 # Documentation
-1. Random Class:https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netframework-4.8
+1. Random Class: https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netframework-4.8
 2. LINQ: https://docs.microsoft.com/en-us/dotnet/standard/using-linq
